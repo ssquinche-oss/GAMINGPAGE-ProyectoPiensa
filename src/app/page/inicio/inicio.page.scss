@@ -1,0 +1,125 @@
+ion-content {
+  --background: #050b1e;
+  color: #ffffff;
+}
+
+/* 🌈 HERO CON GRADIENTE ANIMADO */
+.neon-bg {
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+
+  background: linear-gradient(
+    270deg,
+    #0ea5e9,
+    #ec4899,
+    #8b5cf6
+  );
+  background-size: 600% 600%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ✨ TEXTO CON BRILLO */
+.glow-text {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow:
+    0 0 8px #22c55e,
+    0 0 16px #22c55e;
+  margin-bottom: 10px;
+}
+
+/* SUBTÍTULO */
+.subtitle {
+  font-size: 1.05rem;
+  margin-bottom: 22px;
+  color: #e0f2fe;
+}
+
+/* 🔘 BOTÓN PULSANTE */
+.pulse-btn {
+  --background: #22c55e;
+  --color: #022c22;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: pulse 2s infinite;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-btn:hover {
+  transform: scale(1.06);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { box-shadow: 0 0 0 18px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+/* 🎴 DESTACADOS */
+.featured {
+  padding: 32px 16px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.6rem;
+  color: #22c55e;
+}
+
+/* TARJETAS */
+.cards {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.neon-card {
+  width: 280px;
+  border-radius: 20px;
+  background: #020617;
+  box-shadow:
+    0 0 10px rgba(34, 197, 94, 0.3),
+    0 0 20px rgba(139, 92, 246, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neon-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 0 15px rgba(34, 197, 94, 0.6),
+    0 0 30px rgba(139, 92, 246, 0.4);
+}
+
+ion-card-title {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+/* ✨ ENTRADA SUAVE */
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

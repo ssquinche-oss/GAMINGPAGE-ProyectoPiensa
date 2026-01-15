@@ -1,0 +1,59 @@
+ion-content {
+  --background: #0f172a;
+  color: #ffffff;
+}
+
+/* =========================
+   PRESENTACIÓN
+========================= */
+.about {
+  padding: 36px 24px;
+  text-align: center;
+}
+
+.about h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #22c55e;
+}
+
+.about p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #cbd5f5;
+}
+
+/* =========================
+   INFORMACIÓN
+========================= */
+.info {
+  padding: 0 20px 40px;
+}
+
+.info .card {
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background: #020617;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info .card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 14px rgba(236, 72, 153, 0.4),
+    0 0 28px rgba(139, 92, 246, 0.3);
+}
+
+.info .card ion-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ec4899;
+}
+
+.info .card ion-card-content {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: #e5e7eb;
+}

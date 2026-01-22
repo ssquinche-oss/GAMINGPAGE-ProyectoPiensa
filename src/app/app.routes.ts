@@ -20,8 +20,8 @@ export const routes: Routes = [
     loadComponent: () => import('./page/sobremi/sobremi.page').then(m => m.SobreMiPage),
   },
   {
-   path: 'diseñoj',
-   loadComponent: () => import('./page/diseñoj/diseñoj.page').then(m => m.DiseñojPage),
+   path: 'estilo',
+   loadComponent: () => import('./page/estilo/estilo.page').then(m => m.EstiloPage),
   },
   {
    path: 'pruebas',

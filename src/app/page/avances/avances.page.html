@@ -1,168 +1,131 @@
-<ion-header translucent>
+<ion-header>
   <ion-toolbar color="dark">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    <ion-back-button defaultHref="/inicio"></ion-back-button>
     </ion-buttons>
-    <ion-title>Avances</ion-title>
+    <ion-title>Avances del Juego</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content>
 
-  <!-- HERO AVANCES -->
-  <section class="hero neon-bg">
-    <div class="hero-content fade-in">
-      <h1 class="glow-text">Avances del juego</h1>
-      <p class="subtitle">
-        Progreso y mejoras en el desarrollo de RegNum
-      </p>
-    </div>
-  </section>
-
-  <!-- TIMELINE / AVANCES -->
+  <!-- ================= AVANCES / NAVEGACIÓN ================= -->
   <section class="progress">
 
-    <ion-card
-      class="card neon-card design-card"
-      routerLink="/disenoj"
-      button
->
-        <div class="card-img">
-          <img src="assets/img/diseno-juego.jpg" alt="Diseño del juego">
-        </div>
-
+    <ion-card class="neon-card hover-card">
+      <div class="img-wrapper">
+        <img src="assets/img/estilo-preview.jpg" />
+      </div>
       <ion-card-header>
-      <ion-card-title>🎨 Diseño del juego</ion-card-title>
+        <ion-card-title>Diseño del juego</ion-card-title>
       </ion-card-header>
+      <ion-card-content>
+        Concepto visual y tablero.
+        <ion-button
+  expand="block"
+  class="pulse-btn"
+  routerLink="/estilo">
+  Ver más
+</ion-button>
 
-        <ion-card-content>
-        Diseño simple, dinámico y bonito, un juego de mesa comprensible
-        y fácil de entender.
       </ion-card-content>
     </ion-card>
 
-    <ion-card class="card neon-card">
+    <ion-card class="neon-card hover-card">
+      <div class="img-wrapper">
+        <img src="assets/img/cartas-preview.jpg" />
+      </div>
       <ion-card-header>
-        <ion-card-title>🃏 Cartas y mecánicas</ion-card-title>
+        <ion-card-title>Cartas y mecánicas</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        Creación de cartas con habilidades y mecánicas estratégicas, hechas para entender la sociopolitica y la democracia en el Ecuador.
+        Roles, eventos y decisiones.
+        <ion-button expand="block" class="pulse-btn" routerLink="/cartas">
+          Ver más
+        </ion-button>
       </ion-card-content>
     </ion-card>
 
-    <ion-card class="card neon-card">
+    <ion-card class="neon-card hover-card">
+      <div class="img-wrapper">
+        <img src="assets/img/prototipo-preview.jpg" />
+      </div>
       <ion-card-header>
-        <ion-card-title>🧪 Prototipo</ion-card-title>
+        <ion-card-title>Prototipo</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        Prototipo 1, creado con una similitud al monopolio, bastante simple y aun sin dibujos.
+        Versión funcional inicial.
+        <ion-button expand="block" class="pulse-btn" routerLink="/prototipo">
+          Ver más
+        </ion-button>
       </ion-card-content>
     </ion-card>
 
-    <ion-card class="card neon-card">
+    <ion-card class="neon-card hover-card">
+      <div class="img-wrapper">
+        <img src="assets/img/pruebas-preview.jpg" />
+      </div>
       <ion-card-header>
-        <ion-card-title>⚙️ Pruebas y ajustes</ion-card-title>
+        <ion-card-title>Pruebas y ajustes</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        Las reglas actuales son el primer punto, son hechas como base, sin embargo se empezaran a arreglar fallos mas adelante.
+        Balance y correcciones.
+        <ion-button expand="block" class="pulse-btn" routerLink="/pruebas">
+          Ver más
+        </ion-button>
       </ion-card-content>
     </ion-card>
 
   </section>
 
+  <!-- ================= REGLAS DEL JUEGO ================= -->
   <section class="featured fade-in">
-  <h2 class="section-title">📘 Reglas del Juego</h2>
+    <h2 class="section-title">Reglas del Juego</h2>
 
-  <ion-card class="neon-card">
-    <ion-card-content>
+    <ion-card class="neon-card">
+      <ion-card-content>
 
-      <h3>💰 1. Capital Político (CP)</h3>
-      <p>
-        El dinero del juego se reemplaza por <strong>Capital Político</strong>.
-        Sirve para comprar instituciones, financiar campañas, pagar sanciones
-        y comprar influencias.
-      </p>
-      <p>Cada jugador inicia con <strong>1.500 CP</strong>.</p>
+        <h3>💰 Capital Político (CP)</h3>
+        <p>Se usa para comprar instituciones, campañas y sanciones.</p>
+        <p><strong>Inicio: 1.500 CP</strong></p>
 
-      <h3>🏛️ 2. Instituciones Democráticas</h3>
-      <p>
-        Las propiedades representan instituciones como:
-      </p>
-      <ul>
-        <li>Medios de Comunicación</li>
-        <li>Asamblea Nacional</li>
-        <li>CNE</li>
-        <li>Ministerios</li>
-        <li>Corte Constitucional</li>
-      </ul>
-      <p>
-        Si caes en una institución libre puedes comprarla.
-        Si pertenece a otro jugador, pagas influencia política.
-      </p>
+        <h3>🏛️ Instituciones Democráticas</h3>
+        <ul>
+          <li>Medios de Comunicación</li>
+          <li>Asamblea Nacional</li>
+          <li>CNE</li>
+          <li>Ministerios</li>
+          <li>Corte Constitucional</li>
+        </ul>
 
-      <h3>🎯 3. Influencia y Control</h3>
-      <ul>
-        <li>Casas = Influencia</li>
-        <li>Hoteles = Control total</li>
-      </ul>
+        <h3>🎯 Influencia y Control</h3>
+        <ul>
+          <li>Casas = Influencia</li>
+          <li>Hoteles = Control total</li>
+        </ul>
 
-      <h3>🎭 4. Roles Ocultos</h3>
-      <ul>
-        <li>Presidente/a</li>
-        <li>Ministro/a</li>
-        <li>Líder social</li>
-        <li>Periodista</li>
-        <li>Ciudadano/a</li>
-      </ul>
+        <h3>🎭 Roles Ocultos</h3>
+        <ul>
+          <li>Presidente/a</li>
+          <li>Ministro/a</li>
+          <li>Líder social</li>
+          <li>Periodista</li>
+          <li>Ciudadano/a</li>
+        </ul>
 
-      <h3>🗳️ 5. Elecciones Presidenciales</h3>
-      <p>
-        Cada cierto número de rondas se realizan elecciones.
-        Todos votan en secreto.
-      </p>
+        <h3>🗳️ Elecciones</h3>
+        <p>Votación secreta cada cierto número de rondas.</p>
 
-      <p><strong>Intervención del Ministro:</strong></p>
-      <ul>
-        <li>Puede modificar hasta 2 votos</li>
-        <li>Debe pagar CP o usar una carta</li>
-        <li>Nadie sabe quién alteró los votos</li>
-      </ul>
+        <h3>⚠️ Trucos y Trampas</h3>
+        <p>Eventos positivos y castigos políticos.</p>
 
-      <h3>🎲 6. Casillas de Truco</h3>
-      <ul>
-        <li>Campaña financiada: paga 200 CP y avanza</li>
-        <li>Apoyo ciudadano: gana 150 CP</li>
-        <li>Discurso convincente: roba una institución</li>
-      </ul>
+        <h3>🏆 Objetivo</h3>
+        <p>
+          Gana quien acumule más CP o controle presidencia + 3 instituciones.
+        </p>
 
-      <h3>⚠️ 7. Casillas Trampa</h3>
-      <ul>
-        <li>Corrupción descubierta</li>
-        <li>Protestas sociales</li>
-        <li>Crisis política</li>
-        <li>Censura mediática</li>
-      </ul>
-
-      <h3>❓ 8. Preguntas y Retos</h3>
-      <p>
-        Responder preguntas permite evitar multas o ganar CP.
-      </p>
-
-      <h3>🏆 9. Objetivo del Juego</h3>
-      <p>
-        Gana quien acumule más CP o controle la presidencia
-        y tres instituciones clave.
-      </p>
-
-      <h3>📚 10. Enfoque Educativo</h3>
-      <p>
-        El juego enseña democracia, poder institucional,
-        corrupción y participación ciudadana.
-      </p>
-
-    </ion-card-content>
-  </ion-card>
-</section>
-
+      </ion-card-content>
+    </ion-card>
+  </section>
 
 </ion-content>

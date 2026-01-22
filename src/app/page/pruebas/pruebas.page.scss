@@ -3,49 +3,24 @@ ion-content {
   color: #ffffff;
 }
 
-.neon-bg {
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(270deg, #facc15, #ec4899, #8b5cf6);
-  background-size: 600% 600%;
-  animation: gradientMove 12s ease infinite;
+.design-section {
+  padding: 20px;
+  display: grid;
+  gap: 22px;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.glow-text {
-  font-size: 2.5rem;
-  font-weight: 800;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: #e0f2fe;
-}
-
-.content {
-  padding: 32px 20px;
-}
-
-.info-card {
-  border-radius: 22px;
+.design-card {
+  border-radius: 18px;
   overflow: hidden;
-  background: #020617;
-  box-shadow: 0 0 18px rgba(250, 204, 21, 0.4);
+  box-shadow: 0 0 22px rgba(236, 72, 153, 0.25);
 }
 
-.card-img {
-  height: 180px;
-}
-
-.card-img img {
+.design-card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: block;
+}
+
+ion-card-title {
+  color: #ec4899;
+  font-weight: 700;
 }

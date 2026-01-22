@@ -3,70 +3,117 @@ ion-content {
   color: #ffffff;
 }
 
-/* HERO CON GRADIENTE */
-.neon-bg {
-  height: 45vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 24px;
-
-  background: linear-gradient(
-    270deg,
-    #8b5cf6,
-    #0ea5e9,
-    #ec4899,
-  );
-  background-size: 600% 600%;
-  animation: gradientMove 14s ease infinite;
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* TEXTO */
-.glow-text {
-  font-size: 2.2rem;
-  font-weight: 800;
-  text-shadow:
-    0 0 8px #22c55e,
-    0 0 16px #22c55e;
-}
-
-.subtitle {
-  font-size: 1rem;
-  color: #e0f2fe;
-  margin-top: 10px;
-}
-
-/* AVANCES */
+/* ===================== SECCIÓN AVANCES ===================== */
 .progress {
-  padding: 32px 16px;
+  padding: 24px 16px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
-/* TARJETAS NEÓN */
+/* CARD BASE */
 .neon-card {
-  border-radius: 20px;
   background: #020617;
+  border-radius: 20px;
+  overflow: hidden;
   box-shadow:
-    0 0 10px rgba(139, 92, 246, 0.35),
-    0 0 20px rgba(34, 197, 94, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    0 0 10px rgba(236, 72, 153, 0.35),
+    0 0 20px rgba(139, 92, 246, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
+/* HOVER GENERAL */
+.neon-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 0 18px rgba(236, 72, 153, 0.7),
+    0 0 32px rgba(139, 92, 246, 0.5);
+}
+
+/* ===================== IMAGEN HOVER ===================== */
+.img-wrapper {
+  height: 170px;
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* EFECTO IMAGEN */
+.neon-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+/* ===================== TEXTO ===================== */
 ion-card-title {
-  color: #22c55e;
+  font-size: 1.3rem;
   font-weight: 700;
+  color: #ec4899;
 }
 
-/* ENTRADA */
+ion-card-content {
+  font-size: 1rem;
+  color: #e5e7eb;
+}
+
+/* ===================== BOTÓN ===================== */
+.pulse-btn {
+  margin-top: 14px;
+  --background: #ec4899;
+  --color: #1f0933;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7); }
+  70% { box-shadow: 0 0 0 18px rgba(236, 72, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+}
+
+/* ===================== REGLAS ===================== */
+.featured {
+  padding: 36px 18px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #22c55e;
+  margin-bottom: 24px;
+}
+
+.featured .neon-card {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* TEXTO DE REGLAS */
+.featured h3 {
+  margin-top: 18px;
+  font-size: 1.2rem;
+  color: #38bdf8;
+}
+
+.featured p,
+.featured li {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #cbd5f5;
+}
+
+.featured ul {
+  padding-left: 20px;
+}
+
+/* ===================== ANIMACIÓN ENTRADA ===================== */
 .fade-in {
   animation: fadeIn 1.2s ease forwards;
 }
@@ -74,44 +121,10 @@ ion-card-title {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-/* CARD CLICKEABLE */
-.design-card {
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-/* CONTENEDOR DE IMAGEN */
-.card-img {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.4s ease;
-}
-
-/* IMAGEN */
-.card-img img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  filter: brightness(0.85);
-}
-
-/* HOVER: EXPANDE IMAGEN */
-.design-card:hover .card-img {
-  height: 160px;
-}
-
-/* EFECTO EXTRA */
-.design-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow:
-    0 0 18px rgba(34, 197, 94, 0.6),
-    0 0 34px rgba(139, 92, 246, 0.45);
 }

@@ -1,29 +1,38 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/avances"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cartas y Mecánicas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
 
-  <section class="hero neon-bg">
-    <div class="hero-content fade-in">
-      <h1 class="glow-text">🃏 Cartas y Mecánicas</h1>
-      <p class="subtitle">
-        Estrategia, roles ocultos y decisiones clave
-      </p>
-    </div>
-  </section>
+  <section class="design-section">
 
-  <section class="content">
-    <ion-card class="info-card">
-      <div class="card-img">
-        <img src="assets/img/cartas.jpg" alt="Cartas del juego">
-      </div>
-
+    <ion-card class="design-card">
+      <img src="assets/img/cartas-eventos.jpg" alt="Cartas de eventos">
       <ion-card-header>
-        <ion-card-title>Cartas del juego</ion-card-title>
+        <ion-card-title>🃏 Cartas de Eventos</ion-card-title>
       </ion-card-header>
-
       <ion-card-content>
-        Las cartas representan eventos políticos, trampas,
-        influencias y roles que cambian el rumbo del juego.
+        Representan situaciones políticas reales como crisis,
+        campañas, corrupción o apoyo ciudadano.
       </ion-card-content>
     </ion-card>
+
+    <ion-card class="design-card">
+      <img src="assets/img/cartas-roles.jpg" alt="Cartas de roles">
+      <ion-card-header>
+        <ion-card-title>🎭 Roles Ocultos</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Cada jugador asume un rol secreto con habilidades
+        especiales que influyen en el desarrollo del juego.
+      </ion-card-content>
+    </ion-card>
+
   </section>
 
 </ion-content>

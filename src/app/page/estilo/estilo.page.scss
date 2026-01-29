@@ -1,146 +1,256 @@
-// VARIABLES DE MARCA
-$color-arena: #dcb975;
-$color-oro: #ffdfa5;
-$fondo-negro: #000000;
+// 🏛️ VARIABLES DE IDENTIDAD Y EFECTOS
+$gold-glow: 0 0 30px rgba(212, 175, 55, 0.4);
+$inst-color: #6fb392; // Instituciones
+$event-color: #d99a83; // Eventos
+$rol-color: #d4af6a; // Roles
+$board-color: #9178b3; // Tablero
+$transition-epic: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 
-// BARRA DE NAVEGACIÓN (Corrección de centrado vertical Y)
+// Paleta RegNum
+$color-arena: #dcb975;
+$fondo-nav: #000000;
+
+
 .gaming-toolbar {
-  --background: #{$fondo-negro};
+  --background: #{$fondo-nav};
   --color: #{$color-arena};
+  // Forzamos una altura limpia para que el centrado en Y sea exacto
   height: 65px; 
   --min-height: 65px;
   position: relative;
   border-bottom: 2px solid rgba($color-arena, 0.4);
 
+
+  // 1. EL TÍTULO (Lado izquierdo, centrado en Y)
   ion-title {
     position: absolute;
     left: 20px;
     top: 50%;
-    transform: translateY(-50%); // Centrado en Y
+    transform: translateY(-50%); // Centrado vertical puro
     font-weight: 800;
     color: #fff;
     text-transform: uppercase;
+    letter-spacing: 2px;
     text-shadow: 0 0 10px $color-arena;
+    margin: 0;
+    z-index: 10;
   }
 
+
+  // 2. EL CONTENEDOR DE BOTONES (Centrado total X e Y)
   .nav-center {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%); // Centrado en X e Y
+    // translate(-50%, -50%) centra en X (horizontal) y en Y (vertical) a la vez
+    transform: translate(-50%, -50%); 
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    z-index: 5;
+
 
     ion-button {
       --color: #{$color-arena};
       font-weight: 700;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
+      margin: 0;
+      --padding-top: 0;
+      --padding-bottom: 0;
+
+
+      &:hover {
+        --color: #ffffff;
+        filter: drop-shadow(0 0 8px $color-arena);
+        transform: translateY(-2px);
+        transition: 0.3s;
+      }
     }
   }
 }
 
-// CONTENEDOR PRINCIPAL
+
+// AJUSTE PARA MÓVILES
+@media (max-width: 768px) {
+  .gaming-toolbar {
+    ion-title {
+      display: none; // Oculta GAMINGPAGE en móvil para no chocar
+    }
+    .nav-center {
+      width: 100%;
+      justify-content: space-evenly;
+      left: 0;
+      transform: translateY(-50%); // Solo mantiene el centrado en Y
+    }
+  }
+}
+
+// 🌌 CONTENEDOR PRINCIPAL CON CENTRADO VERTICAL (EJE Y)
 .deck-wrapper {
-  padding: 40px 10px;
-  background: radial-gradient(circle at top, #111 0%, #000 100%);
-  text-align: center;
+  background: radial-gradient(circle at top, #1a1a1a 0%, #050505 100%);
+  padding: 80px 0;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // 🎯 CENTRADO VERTICAL (EJE Y)
+  align-items: center;     // 🎯 CENTRADO HORIZONTAL (EJE X)
+  min-height: 100vh;       // Ocupa todo el alto de la pantalla
+  width: 100%;
 
   .main-title {
     color: #fff;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 8px;
     text-transform: uppercase;
-    text-shadow: 0 0 15px rgba($color-arena, 0.5);
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   }
-  .deck-subtitle { color: #777; margin-bottom: 40px; }
+
+  .deck-subtitle {
+    color: $rol-color;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 60px;
+    opacity: 0.8;
+  }
 }
 
-// GRID DE CARTAS
 .cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 25px;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 20px;
-  align-items: start;
+  width: 95%;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px; // Espacio entre filas
 }
 
-// ESTILO DE LAS CARTAS
-.game-card {
-  margin: 0;
-  --background: #0a0a0a;
-  border: 1px solid rgba($color-arena, 0.2);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all 0.4s ease;
+// 📏 CONTENEDORES DE FILA (ESTRUCTURA 6-2-6-1)
+.row-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  perspective: 1200px;
 
-  .image-box {
-    width: 100%;
-    height: 300px; // Tamaño estándar compacto
-    img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+  // FILAS DE 6
+  &.row-6 {
+    ion-card {
+      width: calc(16.66% - 25px);
+      min-width: 160px;
+      height: 280px; // Ajustado para mejor encuadre vertical
+    }
   }
 
-  // DESPLIEGUE HACIA ABAJO
-  .info-reveal {
-    max-height: 0;
-    opacity: 0;
-    background: #111;
-    transition: all 0.4s ease-in-out;
-    
-    .text-container {
+  // FILA DE 2 (Eventos - Los dejaste solitos y grandes)
+  &.row-2 {
+    ion-card {
+      width: 400px;
+      height: 500px;
+    }
+  }
+
+  // FILA DE 1 (Tablero - Cuadrado Perfecto)
+  &.row-1 {
+    margin-top: 40px;
+    .board-card {
+      width: 600px !important; 
+      height: auto !important; 
+      aspect-ratio: 1 / 1 !important; // 🔳 CUADRADO
+      border: 3px solid $board-color !important;
+      border-bottom: 12px solid $board-color !important;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.9), 0 0 40px rgba($board-color, 0.2);
+
+      .image-box img {
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// 🎴 COMPONENTE DE CARTA
+ion-card {
+  background: #111 !important;
+  border-radius: 16px !important;
+  margin: 0 !important;
+  overflow: hidden;
+  position: relative;
+  transition: $transition-epic;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  .card-content-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .image-box {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 15px;
-      text-align: left;
-      border-top: 1px solid rgba($color-arena, 0.2);
-      h3 { color: $color-arena; font-size: 1rem; margin-bottom: 5px; }
-      p { color: #bbb; font-size: 0.8rem; line-height: 1.3; }
-      .card-type { font-size: 0.65rem; color: #888; border: 1px solid #444; padding: 2px 5px; border-radius: 3px; }
+      background: linear-gradient(145deg, #1d1d1d, #0a0a0a);
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        transition: $transition-epic;
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+      }
+    }
+  }
+
+  .info-reveal {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: $transition-epic;
+    padding: 30px;
+    text-align: center;
+    z-index: 2;
+
+    .text-container {
+      h3 { color: #fff; font-size: 1.5rem; margin-bottom: 10px; text-transform: uppercase; }
+      p { color: #eee; font-size: 1rem; line-height: 1.4; }
+      .card-type {
+        color: $rol-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 1px solid rgba($rol-color, 0.5);
+        padding: 4px 12px;
+        margin-top: 10px;
+        display: inline-block;
+      }
     }
   }
 
   &:hover {
-    transform: translateY(-8px);
-    border-color: $color-arena;
-    box-shadow: 0 10px 20px rgba($color-arena, 0.2);
-    .info-reveal { max-height: 150px; opacity: 1; }
-    img { transform: scale(1.05); }
+    transform: translateY(-20px) rotateX(8deg);
+    box-shadow: $gold-glow, 0 40px 80px rgba(0, 0, 0, 0.9);
+    z-index: 20;
+    .info-reveal { opacity: 1; transform: translateY(0); }
+    .image-box img { transform: scale(1.1) brightness(0.3) blur(2px); }
   }
 }
 
-// 🎯 CARTA 64: EL TABLERO (Mismo tamaño, estilo Legendario)
-.board-card {
-  border: 2px solid $color-arena !important;
-  box-shadow: 0 0 15px rgba($color-arena, 0.4) !important;
-  position: relative;
-
-  &::before {
-    content: 'TABLERO';
-    position: absolute;
-    top: 10px; right: 10px;
-    background: $color-arena; color: #000;
-    font-size: 0.6rem; font-weight: 900;
-    padding: 2px 8px; border-radius: 4px; z-index: 5;
-  }
-
-  .image-box img {
-    object-fit: contain !important; // Muestra el tablero completo en el cuadro
-    padding: 10px;
-    background: radial-gradient(circle, #222, #000);
-  }
-
-  .text-container h3 {
-    color: #fff !important;
-    text-shadow: 0 0 8px $color-arena;
-  }
-  
-  &:hover {
-    box-shadow: 0 0 30px rgba($color-arena, 0.6) !important;
-    border-color: #fff !important;
-  }
-}
+// COLORES DE BORDE
+.game-card:not(.board-card) { border-bottom: 4px solid $inst-color !important; }
+.sgame-card { border-bottom: 6px solid $event-color !important; }
+.xgame-card { border-bottom: 4px solid $rol-color !important; }
 
 // RESPONSIVE
-@media (max-width: 600px) {
-  .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .game-card { .image-box { height: 220px; } }
+@media (max-width: 1100px) {
+  .row-container {
+    flex-wrap: wrap;
+    &.row-6 ion-card { width: calc(33.3% - 20px); }
+    &.row-2 ion-card { width: calc(50% - 20px); height: 400px; }
+    &.row-1 .board-card { width: 90% !important; }
+  }
 }

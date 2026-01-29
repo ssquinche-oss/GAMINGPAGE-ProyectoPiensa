@@ -1,298 +1,227 @@
-// Paleta del gato
+// VARIABLES UNIFICADAS
 $color-arena: #dcb975;
 $color-ojo: #4c6842;
-$fondo-nav: #000000;
+$fondo-negro: #050505;
 
-// Variables globales
-$color-arena: #dcb975;
-$fondo-negro: #000000;
-
-// 1. BARRA DE NAVEGACIÓN (Consistente con Avances y Diseño)
-.gaming-toolbar {
+.gaming-background {
   --background: #{$fondo-negro};
-  --color: #{$color-arena};
-  height: 65px; 
-  --min-height: 65px;
   position: relative;
-  border-bottom: 2px solid rgba($color-arena, 0.4);
+  overflow-x: hidden;
+}
 
-  ion-title {
+// 🌌 FONDO ESTRATÉGICO
+.plexus-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  background: radial-gradient(circle at center, #1a150d 0%, #000 85%);
+
+  .grid-overlay {
     position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%); // Centrado en Y
-    font-weight: 800;
-    color: #fff;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px $color-arena;
+    width: 200%; height: 200%;
+    top: -50%; left: -50%;
+    background-image: 
+      linear-gradient(rgba($color-arena, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba($color-arena, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(1000px) rotateX(60deg);
+    animation: gridScroll 20s linear infinite;
   }
 
-  .nav-center {
+  .particles {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); // Centrado en X e Y
-    display: flex;
-    gap: 20px;
-
-    ion-button {
-      --color: #{$color-arena};
-      font-weight: 700;
-      text-transform: uppercase;
-    }
+    width: 100%; height: 100%;
+    background-image: radial-gradient(circle, $color-arena 1px, transparent 1px);
+    background-size: 100px 100px;
+    opacity: 0.15;
+    mask-image: radial-gradient(circle, black, transparent 70%);
+    animation: pulseParticles 4s infinite alternate;
   }
 }
 
-// 2. SECCIÓN HERO (El gato protagonista)
+// ⚡ HERO & LOGO CON ENERGÍA
 .hero {
+  position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  min-height: 60vh;
   text-align: center;
-  padding: 60px 20px;
-  background: radial-gradient(circle at center, #1a150d 0%, #000 70%);
 
-  .cat-logo {
-    width: 350px; // Gato grande
-    height: auto;
-    max-width: 90vw;
-    filter: drop-shadow(0 0 20px rgba($color-arena, 0.4));
-    animation: floatGato 4s ease-in-out infinite;
+  .logo-energy-wrapper {
+    position: relative;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .cat-logo {
+      width: 350px;
+      position: relative;
+      z-index: 5;
+      filter: drop-shadow(0 0 20px rgba($color-arena, 0.4));
+      animation: floatLogo 5s ease-in-out infinite;
+    }
+
+    .energy-core {
+      position: absolute;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba($color-arena, 0.3) 0%, transparent 80%);
+      filter: blur(40px);
+      z-index: 1;
+      animation: energyPulse 3s infinite;
+    }
+
+    .electric-aura {
+      position: absolute;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      border: 1px solid rgba($color-arena, 0.5);
+      box-shadow: 0 0 30px rgba($color-arena, 0.2);
+      animation: rotateAura 15s linear infinite;
+    }
   }
 
   .glow-text {
-    font-size: 4rem;
-    color: #fff;
-    text-shadow: 0 0 15px $color-arena;
-    margin: 0;
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    margin: 15px;
+    
+    // CORRECCIÓN DE DEGRADADO
+    background: linear-gradient(to bottom, #fff 20%, $color-arena 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; 
+    
+    filter: drop-shadow(0 0 15px rgba($color-arena, 0.6));
   }
 }
 
-// 3. TARJETAS UNA JUNTO A OTRA (Layout Horizontal)
+// 🃏 SECCIONES Y TARJETAS NEÓN
 .featured {
+  position: relative;
+  z-index: 10;
   padding: 40px 20px;
-  
   .section-title {
     text-align: center;
     color: $color-arena;
     text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px rgba($color-arena, 0.5);
     margin-bottom: 30px;
   }
-
-  .cards {
-    display: flex;
-    flex-wrap: wrap;       // Permite que se pongan una junto a otra
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-
-    .neon-card {
-      flex: 1 1 300px;     // Ancho base para estar en fila
-      max-width: 380px;
-      --background: #0a0a0a;
-      border: 1px solid rgba($color-arena, 0.2);
-      transition: 0.3s ease;
-
-      &:hover {
-        transform: translateY(-10px);
-        border-color: $color-arena;
-        box-shadow: 0 10px 20px rgba($color-arena, 0.2);
-      }
-    }
-  }
 }
 
-// Animación arreglada (Solo mueve el gato en Y)
-@keyframes floatGato {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-ion-header {
-  // Quitamos el borde por defecto de Ionic y ponemos nuestro brillo arena
-  &.ion-no-border {
-    border-bottom: 2px solid rgba($color-arena, 0.4);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
-  }
-}
-
-
-ion-toolbar {
-  --background: #{$fondo-nav};
-  --color: #{$color-arena}; // Cambiado a Arena para que todo combine
-  display: flex;
-  align-items: center;
-  position: relative; // Necesario para que el centrado funcione bien
-
-
-  // Estilo del título GAMINGPAGE (Ahora mucho más visible)
-  ion-title {
-    font-weight: 800;
-    color: #3f2716; // Lo ponemos en blanco puro con brillo arena para que resalte
-    text-shadow: 0 0 10px $color-arena, 0 0 20px rgba($color-arena, 0.5);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-}
-
-
-// CENTRADO DE LOS BOTONES
-ion-buttons[slot="end"] {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-
-
-  ion-button {
-    // Cambiamos el color de las letras de los botones a Arena
-    --color: #{$color-ojo} !important;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-
-
-    // Efecto cuando pasas el mouse
-    &:hover {
-      filter: brightness(1.3) drop-shadow(0 0 8px $color-arena);
-      transform: translateY(-2px);
-    }
-
-
-    // Estilo para el link donde estás parado
-    &.active-link {
-      border-bottom: 2px solid #ffffff;
-      --color: #ffffff !important;
-    }
-  }
-}
-
-
-
-// Colores basados en tu PNG
-$color-cat: #dcb975;
-$color-eye: #4c6842;
-$color-dark-bg: #080a0c;
-
-.gaming-background {
-  --background: #{$color-dark-bg};
-  // Fondo con tonalidad arena suave en el centro
-  background: radial-gradient(circle at center, #1a150d 0%, #080a0c 100%);
-}
-
-// HERO CENTRADO
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 70vh;
-  padding: 40px 20px;
-
-  .logo-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 20px;
-    
-
-    .cat-logo {
-      width: 380px;
-      animation: float 5s ease-in-out infinite;
-      filter: drop-shadow(0 0 20px rgba($color-cat, 0.4));
-    }
-  }
-
-  .glow-text {
-    font-size: 4rem;
-    color: #fff;
-    text-shadow: 0 0 15px $color-cat;
-    margin: 10px 0;
-  }
-  
-  .hero-action-buttons {
-    max-width: 320px;
-    margin: 0 auto;
-  }
-}
-
-// LAYOUT DE TARJETAS LADO A LADO
 .cards-grid {
   display: flex;
-  flex-wrap: wrap; // Permite que bajen si no hay espacio
+  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
-
-  .card {
-    flex: 1 1 300px; // Intentan medir 300px y estar una junto a otra
-    max-width: 350px;
-    margin: 0;
-    --background: #111;
-    border: 1px solid rgba($color-cat, 0.2);
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-    &:hover {
-      transform: translateY(-10px);
-      border-color: $color-cat;
-      box-shadow: 0 10px 20px rgba($color-cat, 0.1);
-    }
-  }
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-// Tarjeta grande de abajo
-.cards-single {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
+.neon-card {
+  flex: 1 1 300px;
+  max-width: 380px;
+  --background: rgba(10, 10, 10, 0.9);
+  border: 1px solid rgba($color-arena, 0.2);
+  backdrop-filter: blur(10px);
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   
-  .main-info {
-    width: 100%;
-    max-width: 1100px;
-    --background: #111;
-    border: 1px solid rgba($color-cat, 0.3);
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  ion-card-title { color: #fff; font-weight: 700; text-transform: uppercase; }
 
-    &:hover {
-      transform: translateY(-10px);
-      border-color: $color-cat;
-      box-shadow: 0 10px 20px rgba($color-cat, 0.1);
-    }
+  &:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: $color-arena;
+    box-shadow: 0 0 30px rgba($color-arena, 0.2);
   }
 }
 
-// Estilos de texto y botones
-.section-title {
-  text-align: center;
-  color: $color-cat;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 40px 0 10px;
+.main-info {
+  max-width: 900px !important;
+  margin: 0 auto;
 }
 
 .game-list {
   list-style: none;
   padding: 0;
-  li {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    color: #ddd;
-  }
+  li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: #ccc; }
 }
 
 .pulse-btn {
   --background: #3f2716;
   --color: #fff;
-  margin-top: 10px;
-  &:hover { --background: #{$color-eye}; }
+  font-weight: 800;
+  margin-top: 20px;
+  &:hover { --background: #{$color-ojo}; }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+// 🎬 ANIMACIONES UNIFICADAS
+@keyframes gridScroll {
+  from { transform: perspective(1000px) rotateX(60deg) translateY(0); }
+  to { transform: perspective(1000px) rotateX(60deg) translateY(50px); }
+}
+@keyframes energyPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.2); }
+}
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+@keyframes rotateAura {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes pulseParticles {
+  from { opacity: 0.1; }
+  to { opacity: 0.3; }
+}
+
+.gaming-toolbar {
+  --background: #000;
+  --border-style: none;
+  border-bottom: 2px solid rgba($color-arena, 0.3);
+  display: flex;
+  align-items: center; // Centrado vertical (Y)
+  height: 70px; 
+
+  ion-title {
+    // Al usar position absolute, el título no "empuja" a los botones del centro X
+    position: absolute;
+    left: 20px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 10px $color-arena;
+    pointer-events: none; // Permite hacer click en lo que esté debajo si es necesario
+  }
+
+  .nav-center {
+    display: flex;
+    width: 100%;
+    justify-content: center; // ESTO centra en el eje X
+    align-items: center;     // ESTO centra en el eje Y
+    gap: 20px;               // Espacio uniforme entre los botones
+
+    ion-button {
+      --color: #{$color-arena};
+      font-weight: 700;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      
+      // Efecto opcional para resaltar el centrado
+      &:hover {
+        --color: #fff;
+        text-shadow: 0 0 8px $color-arena;
+      }
+    }
+  }
 }

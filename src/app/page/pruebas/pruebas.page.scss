@@ -1,95 +1,132 @@
-// Paleta del gato
+// 🏛️ PALETA REGNUM
 $color-arena: #dcb975;
 $color-ojo: #4c6842;
-$fondo-nav: #000000;
+$fondo-site: #000000;
+$transition-epic: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
+// 1. NAVBAR (TU DISEÑO EXACTO)
+.gaming-toolbar {
+  --background: #{$fondo-site};
+  --color: #{$color-arena};
+  height: 65px; 
+  --min-height: 65px;
+  position: relative;
+  border-bottom: 2px solid rgba($color-arena, 0.4);
 
-ion-header {
-  // Quitamos el borde por defecto de Ionic y ponemos nuestro brillo arena
-  &.ion-no-border {
-    border-bottom: 2px solid rgba($color-arena, 0.4);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
-  }
-}
-
-
-ion-toolbar {
-  --background: #{$fondo-nav};
-  --color: #{$color-arena}; // Cambiado a Arena para que todo combine
-  display: flex;
-  align-items: center;
-  position: relative; // Necesario para que el centrado funcione bien
-
-
-  // Estilo del título GAMINGPAGE (Ahora mucho más visible)
   ion-title {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     font-weight: 800;
-    color: #3f2716; // Lo ponemos en blanco puro con brillo arena para que resalte
-    text-shadow: 0 0 10px $color-arena, 0 0 20px rgba($color-arena, 0.5);
+    color: #fff;
+    text-transform: uppercase;
     letter-spacing: 2px;
-    text-transform: uppercase;
+    text-shadow: 0 0- 10px $color-arena;
+    margin: 0;
+    z-index: 10;
   }
-}
 
+  .nav-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    display: flex;
+    gap: 20px;
+    z-index: 5;
 
-// CENTRADO DE LOS BOTONES
-ion-buttons[slot="end"] {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
+    ion-button {
+      --color: #{$color-arena};
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
 
-
-  ion-button {
-    // Cambiamos el color de las letras de los botones a Arena
-    --color: #{$color-ojo} !important;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-
-
-    // Efecto cuando pasas el mouse
-    &:hover {
-      filter: brightness(1.3) drop-shadow(0 0 8px $color-arena);
-      transform: translateY(-2px);
-    }
-
-
-    // Estilo para el link donde estás parado
-    &.active-link {
-      border-bottom: 2px solid #ffffff;
-      --color: #ffffff !important;
+      &:hover {
+        --color: #ffffff;
+        filter: drop-shadow(0 0 8px $color-arena);
+        transform: translateY(-2px);
+      }
     }
   }
 }
 
-
-
+// 🌌 CENTRADO VERTICAL (Y)
 ion-content {
-  --background: #050b1e;
-  color: #ffffff;
+  --background: #000;
+
+  .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // 🎯 Centrado Vertical
+    align-items: center;     // 🎯 Centrado Horizontal
+    min-height: calc(100vh - 65px);
+    padding: 40px 20px;
+    background: radial-gradient(circle at center, #111 0%, #000 100%);
+  }
 }
 
-.design-section {
-  padding: 20px;
-  display: grid;
-  gap: 22px;
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+  h1 { color: #fff; text-transform: uppercase; letter-spacing: 3px; font-size: 2.5rem; }
+  p { color: $color-arena; opacity: 0.8; }
 }
 
-.design-card {
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 0 22px rgba(236, 72, 153, 0.25);
-}
-
-.design-card img {
+// 2. GRID DE PRUEBAS
+.test-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
   width: 100%;
-  display: block;
+  max-width: 1200px;
+
+  .test-card {
+    flex: 1 1 300px;
+    max-width: 380px;
+    background: #0d0d0d !important;
+    border: 1px solid rgba($color-arena, 0.2);
+    border-top: 5px solid $color-ojo !important; // Acento verde de pruebas
+    border-radius: 12px !important;
+    position: relative;
+    transition: $transition-epic;
+
+    .status-tag {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba($color-arena, 0.1);
+      color: $color-arena;
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      border: 1px solid $color-arena;
+    }
+
+    ion-card-header ion-card-title {
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.3rem;
+      margin-top: 10px;
+    }
+
+    ion-card-content {
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+      border-color: $color-ojo;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.8), 0 0 15px rgba($color-ojo, 0.2);
+    }
+  }
 }
 
-ion-card-title {
-  color: #ec4899;
-  font-weight: 700;
+// MÓVIL
+@media (max-width: 768px) {
+  .gaming-toolbar ion-title { display: none; }
+  .test-grid { flex-direction: column; align-items: center; }
 }

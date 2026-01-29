@@ -1,42 +1,93 @@
-<ion-header>
-  <ion-toolbar color="dark">
+<ion-header class="ion-no-border">
+  <ion-toolbar class="gaming-toolbar">
     <ion-title>GAMINGPAGE</ion-title>
-
-
-    <ion-buttons slot="end">
-      <ion-button routerLink="/inicio">Inicio</ion-button>
-      <ion-button routerLink="/avances">Avances</ion-button>
-      <ion-button routerLink="/sobremi">Sobre mí</ion-button>
-    </ion-buttons>
+    <div class="nav-center">
+      <ion-button fill="clear" routerLink="/inicio">Inicio</ion-button>
+      <ion-button fill="clear" routerLink="/avances">Avances</ion-button>
+      <ion-button fill="clear" routerLink="/sobremi">Sobre mí</ion-button>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="main-wrapper">
 
-  <section class="design-section">
+    <header class="page-header">
+      <h1>Protocolo de Pruebas</h1>
+      <p>Registro de validación del funcionamiento, equilibrio y experiencia del juego.</p>
+    </header>
 
-    <ion-card class="design-card">
-      <img src="assets/img/prototipo-tablero.jpg" alt="Prototipo del tablero">
-      <ion-card-header>
-        <ion-card-title>🧪 Tablero Inicial</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Primera versión funcional del tablero para pruebas
-        de reglas, tiempos y dinámica de juego.
-      </ion-card-content>
-    </ion-card>
+    <section class="test-grid">
 
-    <ion-card class="design-card">
-      <img src="assets/img/prototipo-pruebas.jpg" alt="Pruebas del prototipo">
-      <ion-card-header>
-        <ion-card-title>🔍 Pruebas de Jugabilidad</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Se realizaron pruebas con jugadores para detectar
-        errores y mejorar la experiencia.
-      </ion-card-content>
-    </ion-card>
+      <!-- PRUEBAS DE ESTRÉS -->
+      <ion-card class="test-card">
+        <div class="status-tag">Completado</div>
+        <ion-card-header>
+          <ion-card-title>🧪 Pruebas de Estrés</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
 
-  </section>
+          <h3>Resultados</h3>
+          <ul>
+            <li>Duración promedio: 40–50 minutos.</li>
+            <li>Participación activa de todos los jugadores.</li>
+            <li>Fluidez adecuada, con ligera lentitud en grupos grandes.</li>
+          </ul>
 
+          <h3>Conclusión</h3>
+          <p>
+            El juego es estable, comprensible y funcional, adecuado para su uso
+            educativo en el aula.
+          </p>
+
+        </ion-card-content>
+      </ion-card>
+
+      <!-- MECÁNICAS DE ROL -->
+      <ion-card class="test-card">
+        <div class="status-tag">En proceso</div>
+        <ion-card-header>
+          <ion-card-title>🧩 Mecánicas de Rol</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+
+          <h3>Evaluación</h3>
+          <ul>
+            <li>Los roles cumplen funciones claras.</li>
+            <li>No generan ventajas injustas.</li>
+            <li>Las habilidades están equilibradas.</li>
+          </ul>
+
+          <h3>Observación</h3>
+          <p>
+            Las sinergias entre cartas de Institución y Evento fortalecen
+            la toma de decisiones y el aprendizaje estratégico.
+          </p>
+
+        </ion-card-content>
+      </ion-card>
+
+      <!-- INTERFAZ MÓVIL -->
+       <ion-card class="test-card">
+        <div class="status-tag">Pendiente</div>
+        <ion-card-header>
+          <ion-card-title>📱 Interfaz Móvil</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>
+            Optimización del diseño del juego para pantallas pequeñas, asegurando que las cartas,
+            textos y elementos visuales sean fáciles de leer y comprender.
+          </p>
+          <p>
+            El objetivo es mejorar la adaptación del juego a dispositivos móviles,
+            ajustando el tamaño del texto, la distribución del contenido y la claridad visual
+            para ofrecer una experiencia cómoda, accesible y funcional.
+          </p>
+        </ion-card-content>
+      </ion-card>
+
+
+    </section>
+
+  </div>
 </ion-content>

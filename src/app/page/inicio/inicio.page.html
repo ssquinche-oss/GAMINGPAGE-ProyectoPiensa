@@ -2,23 +2,29 @@
   <ion-toolbar class="gaming-toolbar">
     <ion-title slot="start">GAMINGPAGE</ion-title>
     <div class="nav-center">
-      <ion-button fill="clear" routerLink="/inicio">Inicio</ion-button>
-      <ion-button fill="clear" routerLink="/avances">Avances</ion-button>
-      <ion-button fill="clear" routerLink="/sobremi">Sobre mí</ion-button>
+      <ion-button fill="clear" routerLink="/inicio">INICIO</ion-button>
+      <ion-button fill="clear" routerLink="/avances">AVANCES</ion-button>
+      <ion-button fill="clear" routerLink="/sobremi">SOBRE MÍ</ion-button>
     </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen class="gaming-background">
-  <section class="hero neon-bg">
-    <div class="hero-content fade-in">
-      <div class="logo-wrapper">
-        <img src="assets/img/logo1.png" class="cat-logo" alt="Gato RegNum">
-      </div>
+  <div class="plexus-container">
+    <div class="grid-overlay"></div>
+    <div class="particles"></div>
+  </div>
+
+  <section class="hero">
+    <div class="logo-energy-wrapper">
+      <div class="energy-core"></div>
+      <div class="electric-aura"></div>
+      <img src="assets/img/logo1.png" class="cat-logo" alt="RegNum Logo">
+    </div>
+    
+    <div class="hero-text-content">
       <h1 class="glow-text">RegNum</h1>
-      <p class="subtitle">
-        Un juego de mesa estratégico, competitivo y divertido
-      </p>
+      <p class="subtitle">Un juego de mesa estratégico, competitivo y divertido</p>
     </div>
   </section>
 
@@ -31,8 +37,7 @@
         </ion-card-header>
         <ion-card-content>
           Cada carta tiene habilidades especiales que cambian la partida, 
-          cartas unicas y dificiles de encontrar, 
-          son las mas corruptas y capitalistas.
+          cartas unicas y dificiles de encontrar, son las mas corruptas y capitalistas.
         </ion-card-content>
       </ion-card>
 
@@ -54,30 +59,6 @@
           Diseñado para jugar entre amigos o familia, facil de estender, 
           juego de mesa q comprenderan facilmente jovenes y adultos. 
           Minimo 2 personas.
-        </ion-card-content>
-      </ion-card>
-    </div>
-  </section>
-
-  <section class="featured">
-    <h2 class="section-title">🎲 República en Juego</h2>
-    <div class="cards-single">
-      <ion-card class="neon-card main-info">
-        <ion-card-content>
-          <p>
-            <strong>República en Juego</strong> es un juego de mesa educativo inspirado
-            en la democracia y el poder político.
-          </p>
-          <ul class="game-list">
-            <li>💰 El dinero se reemplaza por <strong>Capital Político (CP)</strong></li>
-            <li>🏛️ Las propiedades son <strong>instituciones democráticas</strong></li>
-            <li>🎭 Cada jugador tiene un <strong>rol oculto</strong></li>
-            <li>🗳️ Hay <strong>elecciones manipulables</strong></li>
-            <li>📚 Enseña democracia, corrupción y poder</li>
-          </ul>
-          <ion-button class="pulse-btn" expand="block" routerLink="/avances">
-            Ver reglas completas
-          </ion-button>
         </ion-card-content>
       </ion-card>
     </div>

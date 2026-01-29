@@ -1,130 +1,208 @@
+// Paleta RegNum
+$color-arena: #dcb975;
+$fondo-nav: #000000;
+
+.gaming-toolbar {
+  --background: #{$fondo-nav};
+  --color: #{$color-arena};
+  // Forzamos una altura limpia para que el centrado en Y sea exacto
+  height: 65px; 
+  --min-height: 65px;
+  position: relative;
+  border-bottom: 2px solid rgba($color-arena, 0.4);
+
+  // 1. EL TÍTULO (Lado izquierdo, centrado en Y)
+  ion-title {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%); // Centrado vertical puro
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px $color-arena;
+    margin: 0;
+    z-index: 10;
+  }
+
+  // 2. EL CONTENEDOR DE BOTONES (Centrado total X e Y)
+  .nav-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    // translate(-50%, -50%) centra en X (horizontal) y en Y (vertical) a la vez
+    transform: translate(-50%, -50%); 
+    display: flex;
+    gap: 20px;
+    z-index: 5;
+
+    ion-button {
+      --color: #{$color-arena};
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      margin: 0;
+      --padding-top: 0;
+      --padding-bottom: 0;
+
+      &:hover {
+        --color: #ffffff;
+        filter: drop-shadow(0 0 8px $color-arena);
+        transform: translateY(-2px);
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+// AJUSTE PARA MÓVILES
+@media (max-width: 768px) {
+  .gaming-toolbar {
+    ion-title {
+      display: none; // Oculta GAMINGPAGE en móvil para no chocar
+    }
+    .nav-center {
+      width: 100%;
+      justify-content: space-evenly;
+      left: 0;
+      transform: translateY(-50%); // Solo mantiene el centrado en Y
+    }
+  }
+}
+
+
+// Paleta de colores consistente
+$color-arena: #dcb975;
+$color-ojo: #4c6842;
+$color-nariz: #3f2716;
+$fondo-negro: #000000;
+
+// 1. CONFIGURACIÓN DEL CONTENIDO
 ion-content {
-  --background: #050b1e;
-  color: #ffffff;
+  --background: #{$fondo-negro};
+  background-color: $fondo-negro;
 }
 
-/* ===================== SECCIÓN AVANCES ===================== */
+// 2. CUADRÍCULA DE AVANCES (4 tarjetas)
 .progress {
-  padding: 24px 16px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
+  flex-wrap: wrap;       // Permite que se pongan una junto a otra
+  justify-content: center;
   gap: 20px;
+  padding: 30px 15px;
+
+  .hover-card {
+    flex: 1 1 250px;      // Tamaño ideal para que entren 2 o 4 por fila
+    max-width: 320px;
+    margin: 0;
+    --background: #111;
+    border: 1px solid rgba($color-arena, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      border-color: $color-arena;
+      box-shadow: 0 10px 20px rgba($color-arena, 0.1);
+    }
+
+    // Contenedor de imagen para que todas midan lo mismo
+    .img-wrapper {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // Ajusta la imagen sin deformarla
+        transition: transform 0.5s ease;
+      }
+    }
+
+    &:hover img {
+      transform: scale(1.1); // Efecto zoom suave al pasar el mouse
+    }
+  }
 }
 
-/* CARD BASE */
-.neon-card {
-  background: #020617;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow:
-    0 0 10px rgba(236, 72, 153, 0.35),
-    0 0 20px rgba(139, 92, 246, 0.25);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-/* HOVER GENERAL */
-.neon-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow:
-    0 0 18px rgba(236, 72, 153, 0.7),
-    0 0 32px rgba(139, 92, 246, 0.5);
-}
-
-/* ===================== IMAGEN HOVER ===================== */
-.img-wrapper {
-  height: 170px;
-  overflow: hidden;
-}
-
-.img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.75);
-  transition: transform 0.5s ease, filter 0.5s ease;
-}
-
-/* EFECTO IMAGEN */
-.neon-card:hover img {
-  transform: scale(1.1);
-  filter: brightness(1);
-}
-
-/* ===================== TEXTO ===================== */
-ion-card-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #ec4899;
-}
-
-ion-card-content {
-  font-size: 1rem;
-  color: #e5e7eb;
-}
-
-/* ===================== BOTÓN ===================== */
-.pulse-btn {
-  margin-top: 14px;
-  --background: #ec4899;
-  --color: #1f0933;
-  font-weight: 700;
-  letter-spacing: 1px;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7); }
-  70% { box-shadow: 0 0 0 18px rgba(236, 72, 153, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
-}
-
-/* ===================== REGLAS ===================== */
+// 3. SECCIÓN DE REGLAS (ESTILO GAMING)
 .featured {
-  padding: 36px 18px;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 1.8rem;
-  color: #22c55e;
-  margin-bottom: 24px;
-}
-
-.featured .neon-card {
+  padding: 20px;
   max-width: 900px;
-  margin: auto;
+  margin: 0 auto;
+
+  .section-title {
+    text-align: center;
+    color: $color-arena;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba($color-arena, 0.4);
+  }
+
+  .neon-card {
+    --background: #0d0d0d;
+    border-left: 4px solid $color-arena; // Detalle elegante lateral
+    color: #fff;
+
+    h3 {
+      color: $color-arena;
+      margin-top: 25px;
+      border-bottom: 1px solid rgba($color-arena, 0.2);
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+
+    p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 5px;
+      
+      li {
+        margin: 10px 0;
+        color: #ddd;
+        &::before {
+          content: "▹"; // Flecha gamer
+          color: $color-arena;
+          margin-right: 10px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    strong {
+      color: #fff;
+      background: rgba($color-arena, 0.2);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  }
 }
 
-/* TEXTO DE REGLAS */
-.featured h3 {
-  margin-top: 18px;
-  font-size: 1.2rem;
-  color: #38bdf8;
+// 4. BOTONES "VER MÁS"
+.pulse-btn {
+  --background: #{$color-nariz};
+  --color: #fff;
+  margin-top: 15px;
+  font-weight: bold;
+  
+  &:hover {
+    --background: #{$color-ojo};
+    box-shadow: 0 0 15px rgba($color-ojo, 0.5);
+  }
 }
 
-.featured p,
-.featured li {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #cbd5f5;
-}
-
-.featured ul {
-  padding-left: 20px;
-}
-
-/* ===================== ANIMACIÓN ENTRADA ===================== */
+// Animación de entrada para la sección de reglas
 .fade-in {
-  animation: fadeIn 1.2s ease forwards;
+  animation: fadeInEffect 1.5s ease-in;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeInEffect {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

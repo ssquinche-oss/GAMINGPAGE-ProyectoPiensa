@@ -1,27 +1,146 @@
-ion-content {
-  --background: #050b1e;
-  color: #ffffff;
+// VARIABLES DE MARCA
+$color-arena: #dcb975;
+$color-oro: #ffdfa5;
+$fondo-negro: #000000;
+
+// BARRA DE NAVEGACIÓN (Corrección de centrado vertical Y)
+.gaming-toolbar {
+  --background: #{$fondo-negro};
+  --color: #{$color-arena};
+  height: 65px; 
+  --min-height: 65px;
+  position: relative;
+  border-bottom: 2px solid rgba($color-arena, 0.4);
+
+  ion-title {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%); // Centrado en Y
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px $color-arena;
+  }
+
+  .nav-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); // Centrado en X e Y
+    display: flex;
+    gap: 15px;
+
+    ion-button {
+      --color: #{$color-arena};
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+  }
 }
 
-.design-section {
-  padding: 20px;
+// CONTENEDOR PRINCIPAL
+.deck-wrapper {
+  padding: 40px 10px;
+  background: radial-gradient(circle at top, #111 0%, #000 100%);
+  text-align: center;
+
+  .main-title {
+    color: #fff;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba($color-arena, 0.5);
+  }
+  .deck-subtitle { color: #777; margin-bottom: 40px; }
+}
+
+// GRID DE CARTAS
+.cards-grid {
   display: grid;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: start;
 }
 
-.design-card {
-  border-radius: 18px;
+// ESTILO DE LAS CARTAS
+.game-card {
+  margin: 0;
+  --background: #0a0a0a;
+  border: 1px solid rgba($color-arena, 0.2);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(236, 72, 153, 0.25);
+  transition: all 0.4s ease;
+
+  .image-box {
+    width: 100%;
+    height: 300px; // Tamaño estándar compacto
+    img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+  }
+
+  // DESPLIEGUE HACIA ABAJO
+  .info-reveal {
+    max-height: 0;
+    opacity: 0;
+    background: #111;
+    transition: all 0.4s ease-in-out;
+    
+    .text-container {
+      padding: 15px;
+      text-align: left;
+      border-top: 1px solid rgba($color-arena, 0.2);
+      h3 { color: $color-arena; font-size: 1rem; margin-bottom: 5px; }
+      p { color: #bbb; font-size: 0.8rem; line-height: 1.3; }
+      .card-type { font-size: 0.65rem; color: #888; border: 1px solid #444; padding: 2px 5px; border-radius: 3px; }
+    }
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: $color-arena;
+    box-shadow: 0 10px 20px rgba($color-arena, 0.2);
+    .info-reveal { max-height: 150px; opacity: 1; }
+    img { transform: scale(1.05); }
+  }
 }
 
-.design-card img {
-  width: 100%;
-  height: auto;
-  display: block;
+// 🎯 CARTA 64: EL TABLERO (Mismo tamaño, estilo Legendario)
+.board-card {
+  border: 2px solid $color-arena !important;
+  box-shadow: 0 0 15px rgba($color-arena, 0.4) !important;
+  position: relative;
+
+  &::before {
+    content: 'TABLERO';
+    position: absolute;
+    top: 10px; right: 10px;
+    background: $color-arena; color: #000;
+    font-size: 0.6rem; font-weight: 900;
+    padding: 2px 8px; border-radius: 4px; z-index: 5;
+  }
+
+  .image-box img {
+    object-fit: contain !important; // Muestra el tablero completo en el cuadro
+    padding: 10px;
+    background: radial-gradient(circle, #222, #000);
+  }
+
+  .text-container h3 {
+    color: #fff !important;
+    text-shadow: 0 0 8px $color-arena;
+  }
+  
+  &:hover {
+    box-shadow: 0 0 30px rgba($color-arena, 0.6) !important;
+    border-color: #fff !important;
+  }
 }
 
-ion-card-title {
-  color: #ec4899;
-  font-weight: 700;
+// RESPONSIVE
+@media (max-width: 600px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .game-card { .image-box { height: 220px; } }
 }

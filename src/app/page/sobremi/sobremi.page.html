@@ -8,11 +8,9 @@
     </div>
 
     <ion-buttons slot="end">
-      <a href="assets/juego.pdf" target="_blank" style="display: inline-block; text-decoration: none;">
-        <button style="background: #dcb975; color: black; font-weight: bold; padding: 10px; border: none; cursor: pointer;">
-          IMPRIMIR PDF
-        </button>
-      </a>
+      <ion-button (click)="abrirPDF()" fill="solid" color="warning">
+        IMPRIMIR PDF
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -99,9 +97,9 @@
           <p>He aprendido cosas básicas sobre política y quiero inculcar ese entendimiento en otras personas, y que mejor que con un juego.</p>
         </div>
         <div class="personal-gallery">
-          <div class="mini-card"><img src="assets/img/h1.jpg"></div>
-          <div class="mini-card"><img src="assets/img/h2.jpg"></div>
-          <div class="mini-card"><img src="assets/img/h3.jpg"></div>
+          <div class="mini-card"><img src="assets/img/Tablero.jpg" alt="Tablero"></div>
+          <div class="mini-card"><img src="assets/img/logo1.png" alt="Logo"></div>
+          <div class="mini-card"><img src="assets/img/estilo-preview.jpg" alt="Estilo Preview"></div>
         </div>
       </div>
     </section>

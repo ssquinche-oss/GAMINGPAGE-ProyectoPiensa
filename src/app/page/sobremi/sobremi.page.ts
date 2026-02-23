@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 
+
 @Component({
   selector: 'app-sobremi',
   standalone: true,
@@ -11,5 +12,22 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./sobremi.page.scss'],
 })
 export class SobreMiPage {
+
+
   constructor() {}
+
+
+  abrirPDF() {
+    const url = 'assets/pdf/Juego.pdf';
+    const nuevaVentana = window.open(url, '_blank');
+
+
+    if (nuevaVentana) {
+      nuevaVentana.onload = () => {
+        nuevaVentana.print();
+      };
+    }
+  }
+
+
 }

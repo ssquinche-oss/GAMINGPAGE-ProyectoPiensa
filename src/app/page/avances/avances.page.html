@@ -8,12 +8,11 @@
     </div>
 
     <ion-buttons slot="end">
-      <a href="assets/juego.pdf" target="_blank" style="display: inline-block; text-decoration: none;">
-        <button style="background: #dcb975; color: black; font-weight: bold; padding: 10px; border: none; cursor: pointer;">
-          IMPRIMIR PDF
-        </button>
-      </a>
-</ion-buttons>
+      <ion-button (click)="abrirPDF()" fill="solid" color="warning">
+        IMPRIMIR PDF
+      </ion-button>
+    </ion-buttons>
+    
   </ion-toolbar>
 </ion-header>
 

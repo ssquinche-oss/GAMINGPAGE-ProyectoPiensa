@@ -54,7 +54,7 @@ $neon-pink: #ff2d55;
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5px 20px; /* menos margen */
+  padding: 0px 10px; /* menos margen */
   position: relative;
   z-index: 10;
 }
@@ -66,7 +66,7 @@ $neon-pink: #ff2d55;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 60vh;
+  min-height: 50vh;
   gap: 30px;
 
   .hero-text {

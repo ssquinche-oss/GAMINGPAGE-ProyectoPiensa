@@ -1,93 +1,95 @@
 <ion-header class="ion-no-border">
   <ion-toolbar class="gaming-toolbar">
-    <ion-title>GAMINGPAGE</ion-title>
+    <ion-title slot="start">GAMINGPAGE</ion-title>
+    
     <div class="nav-center">
-      <ion-button fill="clear" routerLink="/inicio">Inicio</ion-button>
-      <ion-button fill="clear" routerLink="/avances">Avances</ion-button>
-      <ion-button fill="clear" routerLink="/sobremi">Sobre mí</ion-button>
+      <ion-button fill="clear" routerLink="/inicio">INICIO</ion-button>
+      <ion-button fill="clear" routerLink="/avances">AVANCES</ion-button>
+      <ion-button fill="clear" routerLink="/sobremi">SOBRE MÍ</ion-button>
     </div>
+
+    <ion-buttons slot="end">
+      <a href="assets/juego.pdf" target="_blank" style="display: inline-block; text-decoration: none;">
+        <button style="background: #dcb975; color: black; font-weight: bold; padding: 10px; border: none; cursor: pointer;">
+          IMPRIMIR PDF
+        </button>
+      </a>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="main-wrapper">
+<ion-content fullscreen class="gaming-background">
+  <div class="plexus-container">
+    <div class="grid-overlay"></div>
+  </div>
 
-    <header class="page-header">
-      <h1>Protocolo de Pruebas</h1>
-      <p>Registro de validación del funcionamiento, equilibrio y experiencia del juego.</p>
-    </header>
-
-    <section class="test-grid">
-
-      <!-- PRUEBAS DE ESTRÉS -->
-      <ion-card class="test-card">
-        <div class="status-tag">Completado</div>
-        <ion-card-header>
-          <ion-card-title>🧪 Pruebas de Estrés</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-
-          <h3>Resultados</h3>
-          <ul>
-            <li>Duración promedio: 40–50 minutos.</li>
-            <li>Participación activa de todos los jugadores.</li>
-            <li>Fluidez adecuada, con ligera lentitud en grupos grandes.</li>
-          </ul>
-
-          <h3>Conclusión</h3>
-          <p>
-            El juego es estable, comprensible y funcional, adecuado para su uso
-            educativo en el aula.
-          </p>
-
-        </ion-card-content>
-      </ion-card>
-
-      <!-- MECÁNICAS DE ROL -->
-      <ion-card class="test-card">
-        <div class="status-tag">En proceso</div>
-        <ion-card-header>
-          <ion-card-title>🧩 Mecánicas de Rol</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-
-          <h3>Evaluación</h3>
-          <ul>
-            <li>Los roles cumplen funciones claras.</li>
-            <li>No generan ventajas injustas.</li>
-            <li>Las habilidades están equilibradas.</li>
-          </ul>
-
-          <h3>Observación</h3>
-          <p>
-            Las sinergias entre cartas de Institución y Evento fortalecen
-            la toma de decisiones y el aprendizaje estratégico.
-          </p>
-
-        </ion-card-content>
-      </ion-card>
-
-      <!-- INTERFAZ MÓVIL -->
-       <ion-card class="test-card">
-        <div class="status-tag">Pendiente</div>
-        <ion-card-header>
-          <ion-card-title>📱 Interfaz Móvil</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p>
-            Optimización del diseño del juego para pantallas pequeñas, asegurando que las cartas,
-            textos y elementos visuales sean fáciles de leer y comprender.
-          </p>
-          <p>
-            El objetivo es mejorar la adaptación del juego a dispositivos móviles,
-            ajustando el tamaño del texto, la distribución del contenido y la claridad visual
-            para ofrecer una experiencia cómoda, accesible y funcional.
-          </p>
-        </ion-card-content>
-      </ion-card>
-
-
+  <div class="main-container">
+    <section class="hero-section" style="text-align: center; min-height: auto; padding: 40px 0;">
+      <h1 class="hero-title" style="font-size: 3.5rem; margin-bottom: 20px;">
+        PROTOCOLO DE PRUEBAS
+      </h1>
+      <p class="hero-subtitle" style="font-size: 1.3rem; max-width: 800px; margin: 0 auto 60px;">
+        Registro de validación del funcionamiento, equilibrio y experiencia del juego.
+      </p>
     </section>
 
+    <section class="featured-section">
+      <h2 class="section-label" style="font-size: 2.2rem; margin-bottom: 40px;">Pruebas Realizadas</h2>
+
+      <div class="cards-grid">
+        <!-- Pruebas de Estrés -->
+        <div class="glass-card">
+          <div class="icon-box purple">
+            <ion-icon name="fitness-outline"></ion-icon>
+          </div>
+          <h3>Pruebas de Estrés</h3>
+          <p class="status">COMPLETADO</p>
+          <p>
+            <strong>Resultados:</strong><br>
+            • Duración promedio: 40-50 minutos.<br>
+            • Participación activa de todos los jugadores.<br>
+            • Fluidez adecuada, con ligera lentitud en grupos grandes.
+          </p>
+          <p>
+            <strong>Conclusión:</strong><br>
+            El juego es estable, comprensible y funcional, adecuado para su uso educativo en el aula.
+          </p>
+        </div>
+
+        <!-- Mecánicas de Rol -->
+        <div class="glass-card">
+          <div class="icon-box cyan">
+            <ion-icon name="people-outline"></ion-icon>
+          </div>
+          <h3>Mecánicas de Rol</h3>
+          <p class="status">COMPLETADO</p>
+          <p>
+            <strong>Evaluación:</strong><br>
+            • Los roles cumplen funciones claras.<br>
+            • No generan ventajas injustas.<br>
+            • Las habilidades están equilibradas.
+          </p>
+          <p>
+            <strong>Observación:</strong><br>
+            Las sinergias entre cartas de Institución y Evento fortalecen la toma de decisiones y el aprendizaje estratégico.
+          </p>
+        </div>
+
+        <!-- Interfaz Móvil -->
+        <div class="glass-card">
+          <div class="icon-box pink">
+            <ion-icon name="phone-portrait-outline"></ion-icon>
+          </div>
+          <h3>Interfaz Móvil</h3>
+          <p class="status">COMPLETADO</p>
+          <p>
+            Optimización del diseño del juego para pantallas pequeñas, asegurando que las cartas, textos y elementos visuales sean fáciles de leer y comprender.
+          </p>
+          <p>
+            El objetivo es mejorar la adaptación del juego a dispositivos móviles, ajustando el tamaño del texto, la distribución del contenido y la claridad visual para ofrecer una experiencia cómoda, accesible y funcional.
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
 </ion-content>

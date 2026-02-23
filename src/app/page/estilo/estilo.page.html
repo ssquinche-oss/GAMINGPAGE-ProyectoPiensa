@@ -1,224 +1,169 @@
 <ion-header class="ion-no-border">
   <ion-toolbar class="gaming-toolbar">
     <ion-title slot="start">GAMINGPAGE</ion-title>
+    
     <div class="nav-center">
-      <ion-button fill="clear" routerLink="/inicio">Inicio</ion-button>
-      <ion-button fill="clear" routerLink="/avances">Avances</ion-button>
-      <ion-button fill="clear" routerLink="/sobremi">Sobre mí</ion-button>
+      <ion-button fill="clear" routerLink="/inicio">INICIO</ion-button>
+      <ion-button fill="clear" routerLink="/avances">AVANCES</ion-button>
+      <ion-button fill="clear" routerLink="/sobremi">SOBRE MÍ</ion-button>
     </div>
+
+    <ion-buttons slot="end">
+      <a href="assets/juego.pdf" target="_blank" style="display: inline-block; text-decoration: none;">
+        <button style="background: #dcb975; color: black; font-weight: bold; padding: 10px; border: none; cursor: pointer;">
+          IMPRIMIR PDF
+        </button>
+      </a>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content fullscreen class="gaming-background">
   <div class="deck-wrapper">
-    <h1 class="main-title">Tablero Político</h1>
-    <p class="deck-subtitle">Pasa el mouse para revelar los secretos del poder.</p>
+    <h1 class="main-title">COMPONENTES DEL JUEGO</h1>
+    <p class="deck-subtitle">Pasa el mouse para ver el objetivo y tipo de cada elemento.</p>
 
     <div class="cards-grid">
-      
-      <div class="row-container row-6">
-        <ion-card class="game-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/Organizacionsocial.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Organización Social</h3>
-                <p>Objetivo: comprender la participación ciudadana.</p>
-                <span class="card-type">Tipo: Social</span>
-              </div>
+      <!-- Fila 1: 3 tarjetas -->
+      <ion-card class="game-card">
+        <div class="card-content-wrapper">
+          <div class="image-box">
+            <img src="assets/img/Organizacionsocial.jpg" alt="Organización Social">
+          </div>
+          <div class="info-reveal">
+            <div class="text-container">
+              <h3>Organización Social</h3>
+              <p>Objetivo: comprender la participación ciudadana.</p>
+              <span class="card-type">Tipo: Social</span>
             </div>
           </div>
-        </ion-card>
+        </div>
+      </ion-card>
 
-        <ion-card class="game-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/ministerios.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Ministerios</h3>
-                <p>Objetivo: comprender la función del Estado.</p>
-                <span class="card-type">Tipo: Institución</span>
-              </div>
+      <ion-card class="game-card">
+        <div class="card-content-wrapper">
+          <div class="image-box">
+            <img src="assets/img/ministerios.jpg" alt="Ministerios">
+          </div>
+          <div class="info-reveal">
+            <div class="text-container">
+              <h3>Ministerios</h3>
+              <p>Objetivo: comprender la función del Estado.</p>
+              <span class="card-type">Tipo: Institución</span>
             </div>
           </div>
-        </ion-card>
+        </div>
+      </ion-card>
 
-        <ion-card class="game-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/medios.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Medios</h3>
-                <p>Objetivo: reconocer la influencia de la información.</p>
-                <span class="card-type">Tipo: Comunicación</span>
-              </div>
+      <ion-card class="game-card">
+        <div class="card-content-wrapper">
+          <div class="image-box">
+            <img src="assets/img/medios.jpg" alt="Medios">
+          </div>
+          <div class="info-reveal">
+            <div class="text-container">
+              <h3>Medios</h3>
+              <p>Objetivo: reconocer la influencia de la información.</p>
+              <span class="card-type">Tipo: Comunicación</span>
             </div>
           </div>
-        </ion-card>
+        </div>
+      </ion-card>
 
-        <ion-card class="game-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/corteconstitucional.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Corte Constitucional</h3>
-                <p>Objetivo: comprender el respeto a la Constitución.</p>
-                <span class="card-type">Tipo: Judicial</span>
-              </div>
+      <!-- Fila 2: 3 tarjetas -->
+      <ion-card class="game-card">
+        <div class="card-content-wrapper">
+          <div class="image-box">
+            <img src="assets/img/corteconstitucional.jpg" alt="Corte Constitucional">
+          </div>
+          <div class="info-reveal">
+            <div class="text-container">
+              <h3>Corte Constitucional</h3>
+              <p>Objetivo: comprender el respeto a la Constitución.</p>
+              <span class="card-type">Tipo: Judicial</span>
             </div>
           </div>
-        </ion-card>
+        </div>
+      </ion-card>
 
-        <ion-card class="game-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/consejoelectoral.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Consejo Nacional Electoral (CNE)</h3>
-                <p>Objetivo: entender cómo se realizan las elecciones.</p>
-                <span class="card-type">Tipo: Electoral</span>
-              </div>
+      <ion-card class="game-card">
+        <div class="card-content-wrapper">
+          <div class="image-box">
+            <img src="assets/img/consejoelectoral.jpg" alt="Consejo Nacional Electoral">
+          </div>
+          <div class="info-reveal">
+            <div class="text-container">
+              <h3>Consejo Nacional Electoral (CNE)</h3>
+              <p>Objetivo: entender cómo se realizan las elecciones.</p>
+              <span class="card-type">Tipo: Electoral</span>
             </div>
           </div>
-        </ion-card>
+        </div>
+      </ion-card>
 
-        <ion-card class="game-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/asambleanacional.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Asamblea Nacional</h3>
-                <p>Objetivo: conocer cómo se crean las leyes.</p>
-                <span class="card-type">Tipo: Legislativa</span>
-              </div>
+      <ion-card class="game-card">
+        <div class="card-content-wrapper">
+          <div class="image-box">
+            <img src="assets/img/asambleanacional.jpg" alt="Asamblea Nacional">
+          </div>
+          <div class="info-reveal">
+            <div class="text-container">
+              <h3>Asamblea Nacional</h3>
+              <p>Objetivo: conocer cómo se crean las leyes.</p>
+              <span class="card-type">Tipo: Legislativa</span>
             </div>
           </div>
-        </ion-card>
-      </div>
+        </div>
+      </ion-card>
 
-      <div class="row-container row-2">
-        <ion-card class="sgame-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/preguntas.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Preguntas</h3>
-                <p>Objetivo: reforzar conocimientos democráticos.</p>
-                <span class="card-type">Tipo: Evaluación</span>
-              </div>
+      <!-- Fila 3: 3 tarjetas -->
+      <ion-card class="game-card">
+        <div class="card-content-wrapper">
+          <div class="image-box">
+            <img src="assets/img/preguntas.jpg" alt="Preguntas">
+          </div>
+          <div class="info-reveal">
+            <div class="text-container">
+              <h3>Preguntas</h3>
+              <p>Objetivo: reforzar conocimientos democráticos.</p>
+              <span class="card-type">Tipo: Evaluación</span>
             </div>
           </div>
-        </ion-card>
+        </div>
+      </ion-card>
 
-        <ion-card class="sgame-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/trucos.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Trucos</h3>
-                <p>Objetivo: simular ventajas o dificultades políticas.</p>
-                <span class="card-type">Tipo: Evento</span>
-              </div>
+      <ion-card class="game-card">
+        <div class="card-content-wrapper">
+          <div class="image-box">
+            <img src="assets/img/trucos.jpg" alt="Trucos">
+          </div>
+          <div class="info-reveal">
+            <div class="text-container">
+              <h3>Trucos</h3>
+              <p>Objetivo: simular ventajas o dificultades políticas.</p>
+              <span class="card-type">Tipo: Evento</span>
             </div>
           </div>
-        </ion-card>
-      </div>
+        </div>
+      </ion-card>
 
-      <div class="row-container row-6">
-        <ion-card class="xgame-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/ciudadano.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Ciudadano</h3>
-                <p>Objetivo: comprender derechos y deberes.</p>
-                <span class="card-type">Tipo: Rol</span>
-              </div>
-            </div>
-          </div>
-        </ion-card>
-
-        <ion-card class="xgame-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/ministro.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Ministro</h3>
-                <p>Objetivo: entender la gestión pública.</p>
-                <span class="card-type">Tipo: Rol</span>
-              </div>
-            </div>
-          </div>
-        </ion-card>
-
-        <ion-card class="xgame-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/periodistas.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Periodista</h3>
-                <p>Objetivo: valorar la libertad de expresión.</p>
-                <span class="card-type">Tipo: Rol</span>
-              </div>
-            </div>
-          </div>
-        </ion-card>
-
-        <ion-card class="xgame-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/juez.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Juez</h3>
-                <p>Objetivo: reconocer la importancia de la justicia.</p>
-                <span class="card-type">Tipo: Rol</span>
-              </div>
-            </div>
-          </div>
-        </ion-card>
-
-        <ion-card class="xgame-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/lider.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Líder Social</h3>
-                <p>Objetivo: fomentar la participación colectiva.</p>
-                <span class="card-type">Tipo: Rol</span>
-              </div>
-            </div>
-          </div>
-        </ion-card>
-
-        <ion-card class="xgame-card">
-          <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/presi.jpg" alt="Carta RegNum"></div>
-            <div class="info-reveal">
-              <div class="text-container">
-                <h3>Presidente</h3>
-                <p>Objetivo: comprender el liderazgo democrático.</p>
-                <span class="card-type">Tipo: Rol</span>
-              </div>
-            </div>
-          </div>
-        </ion-card>
-      </div>
-
-      <div class="row-container row-1">
+      <!-- Última fila: Tablero cuadrado grande -->
+      <div class="board-row">
         <ion-card class="game-card board-card">
           <div class="card-content-wrapper">
-            <div class="image-box"><img src="assets/img/Tablero.jpg" alt="Tablero Final"></div>
+            <div class="image-box">
+              <img src="assets/img/Tablero.jpg" alt="Tablero Político">
+            </div>
             <div class="info-reveal">
               <div class="text-container">
-                <h3>TABLERO</h3>
+                <h3>TABLERO POLÍTICO</h3>
                 <p>Objetivo del tablero: Comprender el funcionamiento de la democracia, las instituciones del Estado y la participación ciudadana mediante el juego.</p>
-                <span class="card-type">OBJETO ÚNICO</span>
+                <span class="card-type">OBJETO CENTRAL</span>
               </div>
             </div>
           </div>
         </ion-card>
       </div>
-
     </div>
   </div>
 </ion-content>

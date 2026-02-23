@@ -18,4 +18,3 @@ describe('PruebasPage', () => {
     expect(component).toBeTruthy();
   });
 });
-

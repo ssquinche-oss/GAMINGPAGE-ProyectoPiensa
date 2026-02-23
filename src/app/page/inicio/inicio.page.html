@@ -1,11 +1,19 @@
 <ion-header class="ion-no-border">
   <ion-toolbar class="gaming-toolbar">
     <ion-title slot="start">GAMINGPAGE</ion-title>
+
     <div class="nav-center">
       <ion-button fill="clear" routerLink="/inicio">Inicio</ion-button>
       <ion-button fill="clear" routerLink="/avances">Avances</ion-button>
       <ion-button fill="clear" routerLink="/sobremi">Sobre mí</ion-button>
     </div>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="abrirPDF()" color="warning" fill="solid">
+        <ion-icon name="document-text-outline" slot="start"></ion-icon>
+        IMPRIMIR PDF
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

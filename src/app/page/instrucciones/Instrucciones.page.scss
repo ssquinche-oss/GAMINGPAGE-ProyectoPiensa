@@ -3,27 +3,19 @@ $color-arena: #dcb975;
 $fondo-nav: #000000;
 $transition-epic: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
-// 1. NAVBAR (TU DISEÑO EXACTO)
+// NAVBAR - ESTILO EXACTO DEL INICIO (altura 80px, botones grises, dorado activo)
 .gaming-toolbar {
-  --background: #{$fondo-nav};
-  --color: #{$color-arena};
-  height: 65px;
-  --min-height: 65px;
-  position: relative;
-  border-bottom: 2px solid rgba($color-arena, 0.4);
+  --background: #000;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 
   ion-title {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-weight: 800;
+    font-weight: 900;
     color: #fff;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 0 10px $color-arena;
-    margin: 0;
-    z-index: 10;
+    font-size: 1.4rem;
   }
 
   .nav-center {
@@ -33,134 +25,124 @@ $transition-epic: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     transform: translate(-50%, -50%);
     display: flex;
     gap: 20px;
-    z-index: 5;
 
     ion-button {
-      --color: #{$color-arena};
+      --color: #888;
       font-weight: 700;
-      font-size: 0.9rem;
-      text-transform: uppercase;
+
+      &.active-link {
+        --color: #{$color-arena};
+      }
 
       &:hover {
-        --color: #ffffff;
-        filter: drop-shadow(0 0 8px $color-arena);
-        transform: translateY(-2px);
-        transition: 0.3s;
+        --color: #{$color-arena};
       }
     }
   }
 }
 
-// 🌌 CONTENEDOR DE CONTENIDO - REDUCIMOS MÁRGENES A LO MÍNIMO
-ion-content {
-  --background: #000;
-
-  .main-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; // quitamos center vertical para que suba más
-    align-items: center;
-    min-height: calc(100vh - 65px);
-    padding: 35px 300px; // margen pequeño lateral (30px) y arriba/abajo mínimo
-    background: radial-gradient(circle at center, #111 0%, #000 100%);
-  }
-}
-
-// Fondo general
+// CONTENEDOR PRINCIPAL - MÁRGENES MÍNIMOS PARA QUE LA CARD SEA ANCHA
 ion-content {
   --background: transparent;
   background: radial-gradient(circle at center, #111 0%, #000 100%);
 }
 
-// SECCIÓN DE LA CARD - MÁXIMO ANCHO, MÍNIMO MARGEN
+.main-wrapper {
+  min-height: calc(100vh - 80px); // ajustado a altura 80px del navbar
+  padding: 40px 40px;             // solo 20px lateral = margen total ~40px
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// SECCIÓN DE LA CARD - ANCHO MÁXIMO, SIN LÍMITES
 .design-section {
-  padding: 20px 0; // solo arriba/abajo mínimo, sin laterales
-  width: 100%; // ocupa todo el ancho disponible
-  max-width: none; // quitamos límite para que se expanda
-  margin: 0 auto;
+  padding: 10px 0;
+  width: 100%;
+  max-width: 100PX;
+  margin: 0;
 }
 
 .design-card.reglas-card {
-  width: 100%; // ocupa todo el ancho de su contenedor
-  max-width: 95vw; // casi pantalla completa (95% para dejar ~50px total margen)
+  width: 100%;
+  max-width: 75vw;                // casi full screen, margen total ~40-50px
   margin: 0 auto;
-  background: rgba(10, 10, 10, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 3px solid rgba($color-arena, 0.35);
-  border-top: 12px solid $color-arena !important;
-  border-radius: 32px;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 3px solid rgba($color-arena, 0.4);
+  border-top: 10px solid $color-arena !important;
+  border-radius: 28px;
   box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.7),
-    inset 0 0 40px rgba($color-arena, 0.15),
-    0 0 30px rgba($color-arena, 0.2);
+    0 15px 50px rgba(0, 0, 0, 0.7),
+    inset 0 0 35px rgba($color-arena, 0.12),
+    0 0 25px rgba($color-arena, 0.18);
   overflow: hidden;
-  transition: all 0.45s ease;
 
   ion-card-header {
-    padding: 32px 40px 20px;
-    background: linear-gradient(135deg, rgba($color-arena, 0.25), transparent 70%);
+    padding: 28px 35px 18px;
+    background: linear-gradient(135deg, rgba($color-arena, 0.22), transparent 70%);
     border-bottom: 2px solid rgba($color-arena, 0.3);
 
     ion-card-title {
-      font-size: 2.4rem;
-      letter-spacing: 2px;
-      text-shadow: 0 0 20px rgba($color-arena, 0.7);
+      font-size: 2.2rem;
+      letter-spacing: 1.8px;
+      text-shadow: 0 0 18px rgba($color-arena, 0.65);
       text-transform: uppercase;
     }
   }
 
   ion-card-content {
     color: #eeeeee;
-    font-size: 1.15rem;
-    line-height: 2.0;
-    padding: 48px 56px; // padding interno grande para rechoncho
+    font-size: 1.12rem;
+    line-height: 1.95;
+    padding: 40px 50px;           // padding interno para que se vea rechoncho
     white-space: pre-line;
     word-wrap: break-word;
 
     strong, b {
       color: $color-arena;
       font-weight: 800;
-      font-size: 1.18rem;
+      font-size: 1.16rem;
     }
 
     ul, ol {
-      padding-left: 36px;
-      margin: 24px 0;
+      padding-left: 32px;
+      margin: 20px 0;
     }
 
     li {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     p {
-      margin: 20px 0;
+      margin: 18px 0;
     }
   }
 
   &:hover {
-    transform: translateY(-18px) scale(1.02);
+    transform: translateY(-12px);
     box-shadow: 
-      0 30px 80px rgba($color-arena, 0.35),
-      0 0 60px rgba($color-arena, 0.25),
-      inset 0 0 50px rgba($color-arena, 0.18);
+      0 25px 70px rgba($color-arena, 0.3),
+      0 0 50px rgba($color-arena, 0.22),
+      inset 0 0 45px rgba($color-arena, 0.15);
     border-color: $color-arena;
   }
 }
 
-// AJUSTE MÓVIL - margen aún más pequeño en celulares
+// RESPONSIVE - EN MÓVIL MÁS ANCHO AÚN
 @media (max-width: 768px) {
   .gaming-toolbar ion-title { display: none; }
 
   .main-wrapper {
-    padding: 10px 15px; // margen lateral mínimo en móvil
+    padding: 10px 10px;           // margen mínimo en móvil
   }
 
   .design-card.reglas-card {
-    max-width: 98vw; // casi full en móvil
-    border-radius: 24px;
+    max-width: 98vw;
+    border-radius: 20px;
     ion-card-content {
-      padding: 36px 28px;
+      padding: 30px 25px;
       font-size: 1.05rem;
       line-height: 1.8;
     }

@@ -1,132 +1,212 @@
-// 🏛️ PALETA REGNUM
 $color-arena: #dcb975;
-$color-ojo: #4c6842;
-$fondo-site: #000000;
-$transition-epic: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+$neon-purple: #bf5af2;
+$neon-cyan: #5ac8fa;
+$neon-pink: #ff2d55;
 
-// 1. NAVBAR (TU DISEÑO EXACTO)
+/* =========================
+   NAVBAR - EXACTO AL INICIO
+========================= */
 .gaming-toolbar {
-  --background: #{$fondo-site};
-  --color: #{$color-arena};
-  height: 65px; 
-  --min-height: 65px;
-  position: relative;
-  border-bottom: 2px solid rgba($color-arena, 0.4);
+  --background: #000;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 
   ion-title {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-weight: 800;
+    font-weight: 900;
     color: #fff;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 0- 10px $color-arena;
-    margin: 0;
-    z-index: 10;
+    font-size: 1.4rem;
   }
 
   .nav-center {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     display: flex;
     gap: 20px;
-    z-index: 5;
 
     ion-button {
-      --color: #{$color-arena};
+      --color: #888;
       font-weight: 700;
-      font-size: 0.9rem;
-      text-transform: uppercase;
+
+      &.active-link {
+        --color: #{$color-arena};
+      }
 
       &:hover {
-        --color: #ffffff;
-        filter: drop-shadow(0 0 8px $color-arena);
-        transform: translateY(-2px);
+        --color: #{$color-arena};
       }
     }
   }
 }
 
-// 🌌 CENTRADO VERTICAL (Y)
-ion-content {
+/* =========================
+   BACKGROUND Y OVERLAY (como en inicio)
+========================= */
+.gaming-background {
   --background: #000;
-
-  .main-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; // 🎯 Centrado Vertical
-    align-items: center;     // 🎯 Centrado Horizontal
-    min-height: calc(100vh - 65px);
-    padding: 40px 20px;
-    background: radial-gradient(circle at center, #111 0%, #000 100%);
-  }
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
 }
 
-.page-header {
-  text-align: center;
-  margin-bottom: 40px;
-  h1 { color: #fff; text-transform: uppercase; letter-spacing: 3px; font-size: 2.5rem; }
-  p { color: $color-arena; opacity: 0.8; }
+.plexus-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
 }
 
-// 2. GRID DE PRUEBAS
-.test-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  width: 100%;
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05; /* ajusta si tienes patrón real */
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+.main-container {
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+}
 
-  .test-card {
-    flex: 1 1 300px;
-    max-width: 380px;
-    background: #0d0d0d !important;
-    border: 1px solid rgba($color-arena, 0.2);
-    border-top: 5px solid $color-ojo !important; // Acento verde de pruebas
-    border-radius: 12px !important;
-    position: relative;
-    transition: $transition-epic;
+/* =========================
+   HERO / HEADER SECTION (adaptado para pruebas)
+========================= */
+.hero-section {
+  text-align: center;
+  min-height: auto;
+  padding: 40px 0;
+}
 
-    .status-tag {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: rgba($color-arena, 0.1);
-      color: $color-arena;
-      font-size: 0.7rem;
-      padding: 3px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      border: 1px solid $color-arena;
-    }
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
 
-    ion-card-header ion-card-title {
-      color: #fff;
-      font-weight: 800;
-      font-size: 1.3rem;
-      margin-top: 10px;
-    }
+.hero-subtitle {
+  color: #aaa;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
 
-    ion-card-content {
-      color: #bbb;
-      line-height: 1.6;
-    }
+/* =========================
+   TARJETAS DE PRUEBAS (estilo glass como en inicio)
+========================= */
+.section-label {
+  color: #fff;
+  font-size: 2.2rem;
+  margin: 20px 0 40px;
+  font-weight: 800;
+  text-align: center;
+}
 
-    &:hover {
-      transform: translateY(-10px);
-      border-color: $color-ojo;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.8), 0 0 15px rgba($color-ojo, 0.2);
-    }
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 30px;
+  transition: 0.35s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(120deg, transparent, rgba($color-arena, 0.7), transparent);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-10px) scale(1.03);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 18px rgba($color-arena, 0.35), 0 0 45px rgba($color-arena, 0.2);
+  }
+
+  .icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    transition: 0.3s;
+  }
+
+  .purple { background: rgba($neon-purple, 0.2); color: $neon-purple; }
+  .cyan { background: rgba($neon-cyan, 0.2); color: $neon-cyan; }
+  .pink { background: rgba($neon-pink, 0.2); color: $neon-pink; }
+
+  &:hover .icon-box {
+    box-shadow: 0 0 25px rgba($neon-purple, 0.6); /* ajusta por color si quieres */
+  }
+
+  h3 {
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  .status {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba($color-arena, 0.2);
+    color: $color-arena;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid $color-arena;
+    text-transform: uppercase;
   }
 }
 
-// MÓVIL
-@media (max-width: 768px) {
-  .gaming-toolbar ion-title { display: none; }
-  .test-grid { flex-direction: column; align-items: center; }
+/* =========================
+   ANIMACIONES (como en inicio)
+========================= */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 2.8rem;
+  }
 }

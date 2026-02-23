@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-pruebas',
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterLink],
+  imports: [CommonModule, IonicModule, RouterModule, RouterLink],
   templateUrl: './pruebas.page.html',
   styleUrls: ['./pruebas.page.scss'],
 })
-export class PruebasPage {}
+export class PruebasPage {
+  constructor() {}
+}
+

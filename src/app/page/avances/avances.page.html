@@ -6,6 +6,14 @@
       <ion-button fill="clear" routerLink="/avances">Avances</ion-button>
       <ion-button fill="clear" routerLink="/sobremi">Sobre mí</ion-button>
     </div>
+
+    <ion-buttons slot="end">
+      <a href="assets/juego.pdf" target="_blank" style="display: inline-block; text-decoration: none;">
+        <button style="background: #dcb975; color: black; font-weight: bold; padding: 10px; border: none; cursor: pointer;">
+          IMPRIMIR PDF
+        </button>
+      </a>
+</ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -16,8 +24,8 @@
 
   <div class="main-container">
     <section class="hero-mini">
-      <h1 class="hero-title">LOGS DE <span class="gold-text">DESARROLLO</span></h1>
-      <p class="hero-subtitle">Visualiza el progreso técnico y estratégico de la República.</p>
+      <h1 class="hero-title">LOGROS DEL <span class="gold-text">DESARROLLO</span></h1>
+      <p class="hero-subtitle">Visualiza el progreso técnico del Primer Ciclo.</p>
     </section>
 
     <section class="avances-grid">
@@ -38,7 +46,7 @@
       <div class="glass-card active-neon">
         <div class="img-wrapper">
           <img src="assets/img/reglas.png" alt="Reglas">
-          <div class="status-tag">EN PROCESO</div>
+          <div class="status-tag">COMPLETADO</div>
         </div>
         <div class="card-body">
           <span class="category-label">FASE 02</span>
@@ -50,14 +58,14 @@
 
       <div class="glass-card">
         <div class="img-wrapper">
-          <img src="assets/img/pruebas-bugs.jpg" alt="Pruebas">
-          <div class="status-tag">REVISIÓN</div>
+          <img src="assets/img/pruebas.png" alt="Pruebas">
+          <div class="status-tag">COMPLETADO</div>
         </div>
         <div class="card-body">
           <span class="category-label">FASE 03</span>
-          <h3>PRUEBAS & BUGS</h3>
+          <h3>PRUEBAS</h3>
           <p>Registro de problemáticas detectadas en el despliegue y soluciones de optimización de código.</p>
-          <ion-button fill="clear" routerLink="/problematica">VER LOGS</ion-button>
+          <ion-button fill="clear" routerLink="/pruebas">VER LOGRO  S</ion-button>
         </div>
       </div>
 

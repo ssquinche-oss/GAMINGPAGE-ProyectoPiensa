@@ -1,227 +1,264 @@
-// VARIABLES UNIFICADAS
 $color-arena: #dcb975;
-$color-ojo: #4c6842;
-$fondo-negro: #050505;
+$neon-purple: #bf5af2;
+$neon-cyan: #5ac8fa;
+$neon-pink: #ff2d55;
 
-.gaming-background {
-  --background: #{$fondo-negro};
-  position: relative;
-  overflow-x: hidden;
-}
-
-// 🌌 FONDO ESTRATÉGICO
-.plexus-container {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 0;
-  background: radial-gradient(circle at center, #1a150d 0%, #000 85%);
-
-  .grid-overlay {
-    position: absolute;
-    width: 200%; height: 200%;
-    top: -50%; left: -50%;
-    background-image: 
-      linear-gradient(rgba($color-arena, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba($color-arena, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-    transform: perspective(1000px) rotateX(60deg);
-    animation: gridScroll 20s linear infinite;
-  }
-
-  .particles {
-    position: absolute;
-    width: 100%; height: 100%;
-    background-image: radial-gradient(circle, $color-arena 1px, transparent 1px);
-    background-size: 100px 100px;
-    opacity: 0.15;
-    mask-image: radial-gradient(circle, black, transparent 70%);
-    animation: pulseParticles 4s infinite alternate;
-  }
-}
-
-// ⚡ HERO & LOGO CON ENERGÍA
-.hero {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 60vh;
-  text-align: center;
-
-  .logo-energy-wrapper {
-    position: relative;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .cat-logo {
-      width: 350px;
-      position: relative;
-      z-index: 5;
-      filter: drop-shadow(0 0 20px rgba($color-arena, 0.4));
-      animation: floatLogo 5s ease-in-out infinite;
-    }
-
-    .energy-core {
-      position: absolute;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba($color-arena, 0.3) 0%, transparent 80%);
-      filter: blur(40px);
-      z-index: 1;
-      animation: energyPulse 3s infinite;
-    }
-
-    .electric-aura {
-      position: absolute;
-      width: 360px; height: 360px;
-      border-radius: 50%;
-      border: 1px solid rgba($color-arena, 0.5);
-      box-shadow: 0 0 30px rgba($color-arena, 0.2);
-      animation: rotateAura 15s linear infinite;
-    }
-  }
-
-  .glow-text {
-    font-size: 5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-    margin: 15px;
-    
-    // CORRECCIÓN DE DEGRADADO
-    background: linear-gradient(to bottom, #fff 20%, $color-arena 80%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent; 
-    
-    filter: drop-shadow(0 0 15px rgba($color-arena, 0.6));
-  }
-}
-
-// 🃏 SECCIONES Y TARJETAS NEÓN
-.featured {
-  position: relative;
-  z-index: 10;
-  padding: 40px 20px;
-  .section-title {
-    text-align: center;
-    color: $color-arena;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-shadow: 0 0 10px rgba($color-arena, 0.5);
-    margin-bottom: 30px;
-  }
-}
-
-.cards-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.neon-card {
-  flex: 1 1 300px;
-  max-width: 380px;
-  --background: rgba(10, 10, 10, 0.9);
-  border: 1px solid rgba($color-arena, 0.2);
-  backdrop-filter: blur(10px);
-  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  
-  ion-card-title { color: #fff; font-weight: 700; text-transform: uppercase; }
-
-  &:hover {
-    transform: translateY(-12px) scale(1.02);
-    border-color: $color-arena;
-    box-shadow: 0 0 30px rgba($color-arena, 0.2);
-  }
-}
-
-.main-info {
-  max-width: 900px !important;
-  margin: 0 auto;
-}
-
-.game-list {
-  list-style: none;
-  padding: 0;
-  li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: #ccc; }
-}
-
-.pulse-btn {
-  --background: #3f2716;
-  --color: #fff;
-  font-weight: 800;
-  margin-top: 20px;
-  &:hover { --background: #{$color-ojo}; }
-}
-
-// 🎬 ANIMACIONES UNIFICADAS
-@keyframes gridScroll {
-  from { transform: perspective(1000px) rotateX(60deg) translateY(0); }
-  to { transform: perspective(1000px) rotateX(60deg) translateY(50px); }
-}
-@keyframes energyPulse {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.2); }
-}
-@keyframes floatLogo {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(2deg); }
-}
-@keyframes rotateAura {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-@keyframes pulseParticles {
-  from { opacity: 0.1; }
-  to { opacity: 0.3; }
-}
-
+/* =========================
+   NAVBAR
+========================= */
 .gaming-toolbar {
   --background: #000;
-  --border-style: none;
-  border-bottom: 2px solid rgba($color-arena, 0.3);
+  height: 80px;
   display: flex;
-  align-items: center; // Centrado vertical (Y)
-  height: 70px; 
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 
   ion-title {
-    // Al usar position absolute, el título no "empuja" a los botones del centro X
-    position: absolute;
-    left: 20px;
     font-weight: 900;
     color: #fff;
-    text-shadow: 0 0 10px $color-arena;
-    pointer-events: none; // Permite hacer click en lo que esté debajo si es necesario
+    letter-spacing: 2px;
+    font-size: 1.4rem;
   }
 
   .nav-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    width: 100%;
-    justify-content: center; // ESTO centra en el eje X
-    align-items: center;     // ESTO centra en el eje Y
-    gap: 20px;               // Espacio uniforme entre los botones
+    gap: 20px;
 
     ion-button {
-      --color: #{$color-arena};
+      --color: #888;
       font-weight: 700;
-      margin: 0;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      
-      // Efecto opcional para resaltar el centrado
-      &:hover {
-        --color: #fff;
-        text-shadow: 0 0 8px $color-arena;
+
+      &.active-link {
+        --color: #{$color-arena};
       }
     }
+  }
+
+  .login-trigger-btn {
+    --border-color: #{$color-arena};
+    --border-style: solid;
+    --border-width: 1px;
+    height: 38px;
+    font-weight: 800;
+    color: #fff;
+  }
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5px 20px; /* menos margen */
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60vh;
+  gap: 30px;
+
+  .hero-text {
+    flex: 1;
+
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 20px;
+
+      .gold-text {
+        color: $color-arena;
+        text-shadow: 0 0 20px rgba($color-arena, 0.5);
+      }
+    }
+
+    .hero-subtitle {
+      color: #aaa;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      max-width: 500px;
+    }
+  }
+
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    .logo-glow-wrapper {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 140%;
+        height: 140%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(
+          circle,
+          rgba($color-arena, 0.25) 0%,
+          transparent 70%
+        );
+        z-index: -1;
+      }
+    }
+
+    .floating-logo {
+      width: 420px; /* LOGO MÁS GRANDE */
+      filter: drop-shadow(0 0 35px rgba($color-arena, 0.5));
+      animation: float 4s ease-in-out infinite;
+    }
+  }
+}
+
+/* =========================
+   TARJETAS DESTACADAS
+========================= */
+.section-label {
+  color: #fff;
+  font-size: 2rem;
+  margin: 5px 0 30px;
+  font-weight: 800;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 30px;
+  transition: 0.35s ease;
+
+  /* BORDE LUMINOSO */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba($color-arena, 0.7),
+      transparent
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-10px) scale(1.03);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 0 18px rgba($color-arena, 0.35),
+      0 0 45px rgba($color-arena, 0.2);
+  }
+
+  .icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    transition: 0.3s;
+
+    &.purple {
+      background: rgba($neon-purple, 0.2);
+      color: $neon-purple;
+    }
+
+    &.cyan {
+      background: rgba($neon-cyan, 0.2);
+      color: $neon-cyan;
+    }
+
+    &.pink {
+      background: rgba($neon-pink, 0.2);
+      color: $neon-pink;
+    }
+  }
+
+  &:hover .icon-box.purple {
+    box-shadow: 0 0 25px rgba($neon-purple, 0.6);
+  }
+
+  &:hover .icon-box.cyan {
+    box-shadow: 0 0 25px rgba($neon-cyan, 0.6);
+  }
+
+  &:hover .icon-box.pink {
+    box-shadow: 0 0 25px rgba($neon-pink, 0.6);
+  }
+
+  h3 {
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #888;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem !important;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-logo {
+    width: 300px;
   }
 }

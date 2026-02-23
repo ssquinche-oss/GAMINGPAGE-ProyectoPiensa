@@ -9,112 +9,58 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen class="gaming-background">
+  <div class="plexus-container">
+    <div class="grid-overlay"></div>
+  </div>
 
-  <!-- ================= AVANCES / NAVEGACIÓN ================= -->
-  <section class="progress">
+  <div class="main-container">
+    <section class="hero-mini">
+      <h1 class="hero-title">LOGS DE <span class="gold-text">DESARROLLO</span></h1>
+      <p class="hero-subtitle">Visualiza el progreso técnico y estratégico de la República.</p>
+    </section>
 
-    <ion-card class="neon-card hover-card">
-      <div class="img-wrapper">
-        <img src="assets/img/estilo-preview.jpg" />
+    <section class="avances-grid">
+      
+      <div class="glass-card">
+        <div class="img-wrapper">
+          <img src="assets/img/Tablero.jpg" alt="Diseño">
+          <div class="status-tag">COMPLETADO</div>
+        </div>
+        <div class="card-body">
+          <span class="category-label">FASE 01</span>
+          <h3>DISEÑO</h3>
+          <p>Evolución de la identidad visual neón y maquetación de componentes Standalone en Angular.</p>
+          <ion-button fill="clear" routerLink="/estilo">VER DETALLES</ion-button>
+        </div>
       </div>
-      <ion-card-header>
-        <ion-card-title>Diseño del juego</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Concepto visual y tablero.
-        <ion-button
-          expand="block"
-          class="pulse-btn"
-          routerLink="/estilo">
-          Ver más
-        </ion-button>
 
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card class="neon-card hover-card">
-      <div class="img-wrapper">
-        <img src="assets/img/prototipo-preview.jpg" />
+      <div class="glass-card active-neon">
+        <div class="img-wrapper">
+          <img src="assets/img/reglas.png" alt="Reglas">
+          <div class="status-tag">EN PROCESO</div>
+        </div>
+        <div class="card-body">
+          <span class="category-label">FASE 02</span>
+          <h3>INSTRUCCIONES</h3>
+          <p>Mecánicas de votación, gestión de capital político y balanceo de cartas de facción.</p>
+          <ion-button fill="clear" routerLink="/instrucciones">LEER INSTRUCCIONES</ion-button>
+        </div>
       </div>
-      <ion-card-header>
-        <ion-card-title>Prototipo</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Versión funcional inicial.
-        <ion-button expand="block" class="pulse-btn" routerLink="/prototipo">
-          Ver más
-        </ion-button>
-      </ion-card-content>
-    </ion-card>
 
-    <ion-card class="neon-card hover-card">
-      <div class="img-wrapper">
-        <img src="assets/img/pruebas-preview.jpg" />
+      <div class="glass-card">
+        <div class="img-wrapper">
+          <img src="assets/img/pruebas-bugs.jpg" alt="Pruebas">
+          <div class="status-tag">REVISIÓN</div>
+        </div>
+        <div class="card-body">
+          <span class="category-label">FASE 03</span>
+          <h3>PRUEBAS & BUGS</h3>
+          <p>Registro de problemáticas detectadas en el despliegue y soluciones de optimización de código.</p>
+          <ion-button fill="clear" routerLink="/problematica">VER LOGS</ion-button>
+        </div>
       </div>
-      <ion-card-header>
-        <ion-card-title>Pruebas y ajustes</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Balance y correcciones.
-        <ion-button expand="block" class="pulse-btn" routerLink="/pruebas">
-          Ver más
-        </ion-button>
-      </ion-card-content>
-    </ion-card>
 
-  </section>
-
-  <!-- ================= REGLAS DEL JUEGO ================= -->
-  <section class="featured fade-in">
-    <h2 class="section-title">Reglas del Juego</h2>
-
-    <ion-card class="neon-card">
-      <ion-card-content>
-        <h2>📜 REGLAMENTO: REPÚBLICA EN JUEGO</h2>
-        <p>El objetivo es acumular Capital Político (CP) mediante la participación democrática y el manejo responsable del poder.</p>
-
-        <hr />
-      
-        <h3>💰 Capital Político (CP)</h3>
-        <p>Se utiliza para gestionar instituciones y cumplir responsabilidades ciudadanas.</p>
-        <p><strong>Inicio: 500 CP por jugador</strong></p>
-      
-        <h3>🏛️ Espacios Institucionales</h3>
-        <ul>
-          <li><strong>Organización Social:</strong> Participación ciudadana con cobro de renta.</li>
-          <li><strong>Ministerios:</strong> Educación, Salud, Economía e Interior (Generan ingresos).</li>
-          <li><strong>Medios:</strong> Acceso a cartas de Truco o Pregunta.</li>
-          <li><strong>Corte Constitucional:</strong> Anulación de penalizaciones (1 uso por visita).</li>
-          <li><strong>CNE:</strong> Activa elecciones y consultas para la Presidencia.</li>
-          <li><strong>Asamblea Nacional:</strong> Permite modificar una regla por una ronda.</li>
-        </ul>
-      
-        <h3>🎭 Roles Ocultos</h3>
-        <p>Cada jugador posee una habilidad y objetivo educativo secreto:</p>
-        <ul>
-          <li>Presidente (vía elección)</li>
-          <li>Ministro/a</li>
-          <li>Periodista</li>
-          <li>Juez/a</li>
-          <li>Líder Social</li>
-          <li>Ciudadano/a</li>
-        </ul>
-      
-        <h3>❓ Desafíos y Eventos</h3>
-        <ul>
-          <li><strong>Preguntas:</strong>Responder y ganar CP o pagar.</li>
-          <li><strong>Trucos:</strong> Alianzas, crisis, apoyo ciudadano o corrupción.</li>
-          <li><strong>Impuestos/Pagos:</strong> Auditorías y crisis que requieren pago al banco.</li>
-        </ul>
-      
-        <h3>🏆 Condición de Victoria</h3>
-        <p>
-          Gana quien tenga <strong>más Capital Político</strong> al finalizar las rondas. 
-          En caso de empate, gana quien controle más espacios institucionales.
-        </p>
-      </ion-card-content>
-    </ion-card>
-  </section>
-
+    </section>
+  </div>
 </ion-content>

@@ -9,60 +9,93 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content fullscreen class="gaming-background">
+  <div class="plexus-container">
+    <div class="grid-overlay"></div>
+  </div>
 
-  <!-- PRESENTACIÓN -->
-  <section class="about">
-    <h1>Sobre el proyecto</h1>
-    <p>
-      GAMINGPAGE es una página web creada para presentar el desarrollo
-      del juego de mesa <strong>RegNum-TomCat</strong>
-    </p>
-  </section>
+  <div class="main-container">
+    <section class="about-header">
+      <div class="text-box">
+        <h1 class="hero-title">ACERCA <span class="gold-text">DE</span></h1>
+        <div class="info-list">
+          <p><span>QUIÉN //</span> SAMANTHA QUINCHE</p>
+          <p><span>QUÉ //</span> ESTUDIANTE DE DESARROLLO DE SOFTWARE</p>
+          <p><span>DÓNDE //</span> CUENCA, ECUADOR</p>
+          <p><span>CUANDO //</span> 2024 - PRESENTE</p>
+          <p><span>POR QUÉ //</span> APRENDER SOCIOPOLÍTICA</p>
+        </div>
+      </div>
+      <div class="profile-frame">
+        <img src="assets/img/icono.png" alt="Profile" class="profile-img">
+      </div>
+    </section>
 
-  <!-- INFO -->
-  <section class="info">
+    <section class="details-grid">
+      <div class="column">
+        <h3>EXPERIENCIA</h3>
+        <div class="exp-item">
+          <span class="plus">+</span>
+          <div class="exp-content">
+            <p class="role">Diseñadora principal // Juego de mesa RegNum</p>
+            <p class="date">Octubre 2025 - Diciembre 2025</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="plus">+</span>
+          <div class="exp-content">
+            <p class="role">Aprendiendo sobre Desarrollo Front-end</p>
+            <p class="date">Febrero 2026 - Presente</p>
+          </div>
+        </div>
+      </div>
 
-    <ion-card class="card">
-      <ion-card-header>
-        <ion-card-title>Objetivo</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        El objetivo del juego de mesa es entender y aprender de forma basica la 
-        sociopolitica y democracia, es para jovenes q trabajen el tema, es decir, 
-        primero de balchiller, jovenes que comprendera las reglas y entenderan la trama del juego.
+      <div class="column">
+        <h3>HABILIDADES</h3>
+        <div class="skills-subgrid">
+          <div>
+            <h4>CONOCIMIENTO</h4>
+            <ul>
+              <li>HTML / CSS</li>
+              <li>TypeScript</li>
+              <li>Ionic / Angular</li>
+              <li>Sociopolítica</li>
+            </ul>
+          </div>
+          <div>
+            <h4>HERRAMIENTAS</h4>
+            <ul>
+              <li>VS Code</li>
+              <li>Figma</li>
+              <li>Vercel</li>
+              <li>Git</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-        Tengo un objetivo de q la nueva generacion adulta pueda entender lo q hace por ejemplo al 
-        votar en elecciones, comprender por quien vota y apoya sin tener q caer en ignorancia de propagandas 
-        o personas que tampoco lo entienden. simplifico lo que se habla sin conocimiento previo, es un 
-        tema delicado q se debe tratar co seriedad.
-      </ion-card-content>
-    </ion-card>
+      <div class="column">
+        <h3>PRESENTADO</h3>
+        <ul class="featured-list">
+          <li><a [routerLink]="['/problematica']">Problematica</a></li>
+          <li><a [routerLink]="['/devlog']">RegNum Registro de desarrollo</a></li>
+          <li><a [routerLink]="['/teoria-diseno']">Teoría del diseño de juegos</a></li>
+        </ul>
+      </div>
+    </section>
 
-    <ion-card class="card">
-      <ion-card-header>
-        <ion-card-title>Desarrollo</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        El proyecto fue desarrollado usando Angular e Ionic
-        con componentes standalone. Un proyecto trabajado con ejemplos politicos reales, 
-        hablando sobre lo que vivio el Ecuador, y tambien tomando otros tipos de juegos y paginas que me ayuden a enseñar lo necesario.
-
-        H
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card class="card">
-      <ion-card-header>
-        <ion-card-title>Autor</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Soy Samantha Quinche, mi Proyecto académico enfocado en el diseño y presentación
-        de un juego de mesa. Basado en la sociopolitica y el aprendizaje de esta, no quiero 
-        que solo aprendan reglas, quiero q entiendan esto y puedan actuar las personas con su criterio para un pais mejor.
-      </ion-card-content>
-    </ion-card>
-
-  </section>
-
+    <section class="personal-section">
+      <div class="personal-layout">
+        <div class="bio-text">
+          <h3>PERSONAL</h3>
+          <p>He aprendido cosas básicas sobre política y quiero inculcar ese entendimiento en otras personas, y que mejor que con un juego.</p>
+        </div>
+        <div class="personal-gallery">
+          <div class="mini-card"><img src="assets/img/h1.jpg"></div>
+          <div class="mini-card"><img src="assets/img/h2.jpg"></div>
+          <div class="mini-card"><img src="assets/img/h3.jpg"></div>
+        </div>
+      </div>
+    </section>
+  </div>
 </ion-content>

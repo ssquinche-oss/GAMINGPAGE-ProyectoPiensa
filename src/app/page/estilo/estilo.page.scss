@@ -15,8 +15,8 @@ $fondo-nav: #000000;
   --background: #{$fondo-nav};
   --color: #{$color-arena};
   // Forzamos una altura limpia para que el centrado en Y sea exacto
-  height: 65px; 
-  --min-height: 65px;
+  height: 80px; 
+  --min-height: 80px;
   position: relative;
   border-bottom: 2px solid rgba($color-arena, 0.4);
 

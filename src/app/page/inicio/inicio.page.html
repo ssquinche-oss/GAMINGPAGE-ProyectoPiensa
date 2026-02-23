@@ -2,9 +2,9 @@
   <ion-toolbar class="gaming-toolbar">
     <ion-title slot="start">GAMINGPAGE</ion-title>
     <div class="nav-center">
-      <ion-button fill="clear" routerLink="/inicio">INICIO</ion-button>
-      <ion-button fill="clear" routerLink="/avances">AVANCES</ion-button>
-      <ion-button fill="clear" routerLink="/sobremi">SOBRE MÍ</ion-button>
+      <ion-button fill="clear" routerLink="/inicio">Inicio</ion-button>
+      <ion-button fill="clear" routerLink="/avances">Avances</ion-button>
+      <ion-button fill="clear" routerLink="/sobremi">Sobre mí</ion-button>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -12,55 +12,52 @@
 <ion-content fullscreen class="gaming-background">
   <div class="plexus-container">
     <div class="grid-overlay"></div>
-    <div class="particles"></div>
   </div>
 
-  <section class="hero">
-    <div class="logo-energy-wrapper">
-      <div class="energy-core"></div>
-      <div class="electric-aura"></div>
-      <img src="assets/img/logo1.png" class="cat-logo" alt="RegNum Logo">
-    </div>
-    
-    <div class="hero-text-content">
-      <h1 class="glow-text">RegNum</h1>
-      <p class="subtitle">Un juego de mesa estratégico, competitivo y divertido</p>
-    </div>
-  </section>
+  <div class="main-container">
+    <section class="hero-section">
+      <div class="hero-text">
+        <h1 class="hero-title">GOBIERNA EN NEON <span class="gold-text">SOCIOPOLITICA</span></h1>
+        <p class="hero-subtitle">
+          El juego de mesa estratégico y competitivo donde la política es un campo de batalla dinámico.
+        </p>
+      </div>
 
-  <section class="featured">
-    <h2 class="section-title">Destacados</h2>
-    <div class="cards-grid">
-      <ion-card class="card neon-card">
-        <ion-card-header>
-          <ion-card-title>Cartas únicas</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          Cada carta tiene habilidades especiales que cambian la partida, 
-          cartas unicas y dificiles de encontrar, son las mas corruptas y capitalistas.
-        </ion-card-content>
-      </ion-card>
+      <div class="hero-image">
+        <div class="logo-glow-wrapper">
+          <img src="assets/img/logo1.png" alt="RegNum Logo" class="floating-logo">
+        </div>
+      </div>
+    </section>
 
-      <ion-card class="card neon-card">
-        <ion-card-header>
-          <ion-card-title>Tablero dinámico</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          El tablero evoluciona según las decisiones de los jugadores. 
-          Para mas informacion vaya a avances.
-        </ion-card-content>
-      </ion-card>
+    <section class="featured-section">
+      <h2 class="section-label">Tarjetas destacadas</h2>
+      
+      <div class="cards-grid">
+        <div class="glass-card">
+          <div class="icon-box purple">
+            <ion-icon name="color-palette-outline"></ion-icon>
+          </div>
+          <h3>CARTAS ÚNICAS</h3>
+          <p>Crea estrategias con habilidades que definen repúblicas.</p>
+        </div>
 
-      <ion-card class="card neon-card">
-        <ion-card-header>
-          <ion-card-title>Multijugador</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          Diseñado para jugar entre amigos o familia, facil de estender, 
-          juego de mesa q comprenderan facilmente jovenes y adultos. 
-          Minimo 2 personas.
-        </ion-card-content>
-      </ion-card>
-    </div>
-  </section>
+        <div class="glass-card">
+          <div class="icon-box cyan">
+            <ion-icon name="grid-outline"></ion-icon>
+          </div>
+          <h3>TABLERO DINÁMICO</h3>
+          <p>Cada decisión en la nación afecta a todos los jugadores.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="icon-box pink">
+            <ion-icon name="people-outline"></ion-icon>
+          </div>
+          <h3>MULTIJUGADOR</h3>
+          <p>Diseñado para que 2 a 4 jugadores compitan por el Capital Político.</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </ion-content>

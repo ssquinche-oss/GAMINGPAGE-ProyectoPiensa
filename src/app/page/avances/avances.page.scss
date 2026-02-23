@@ -1,208 +1,205 @@
-// Paleta RegNum
 $color-arena: #dcb975;
-$fondo-nav: #000000;
+$fondo-negro: #050505;
 
+// NAVBAR UNIFICADA
 .gaming-toolbar {
-  --background: #{$fondo-nav};
-  --color: #{$color-arena};
-  // Forzamos una altura limpia para que el centrado en Y sea exacto
-  height: 65px; 
-  --min-height: 65px;
-  position: relative;
-  border-bottom: 2px solid rgba($color-arena, 0.4);
+  --background: #000;
+  --border-style: none;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-  // 1. EL TÍTULO (Lado izquierdo, centrado en Y)
-  ion-title {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%); // Centrado vertical puro
-    font-weight: 800;
+  .brand-logo {
+    font-weight: 900;
     color: #fff;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 0 10px $color-arena;
-    margin: 0;
-    z-index: 10;
+    text-transform: uppercase;
+    font-size: 1.2rem;
   }
 
-  // 2. EL CONTENEDOR DE BOTONES (Centrado total X e Y)
   .nav-center {
     position: absolute;
     left: 50%;
     top: 50%;
-    // translate(-50%, -50%) centra en X (horizontal) y en Y (vertical) a la vez
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     display: flex;
     gap: 20px;
-    z-index: 5;
 
     ion-button {
-      --color: #{$color-arena};
+      --color: #888;
       font-weight: 700;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      margin: 0;
-      --padding-top: 0;
-      --padding-bottom: 0;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
 
-      &:hover {
-        --color: #ffffff;
-        filter: drop-shadow(0 0 8px $color-arena);
-        transform: translateY(-2px);
-        transition: 0.3s;
+      // Clase para resaltar la página actual
+      &.active-link { 
+        --color: #{$color-arena}; 
+        border-bottom: 2px solid $color-arena;
       }
+      
+      &:hover { --color: #fff; }
     }
   }
-}
 
-// AJUSTE PARA MÓVILES
-@media (max-width: 768px) {
-  .gaming-toolbar {
-    ion-title {
-      display: none; // Oculta GAMINGPAGE en móvil para no chocar
-    }
-    .nav-center {
-      width: 100%;
-      justify-content: space-evenly;
-      left: 0;
-      transform: translateY(-50%); // Solo mantiene el centrado en Y
-    }
-  }
-}
-
-
-// Paleta de colores consistente
-$color-arena: #dcb975;
-$color-ojo: #4c6842;
-$color-nariz: #3f2716;
-$fondo-negro: #000000;
-
-// 1. CONFIGURACIÓN DEL CONTENIDO
-ion-content {
-  --background: #{$fondo-negro};
-  background-color: $fondo-negro;
-}
-
-// 2. CUADRÍCULA DE AVANCES (4 tarjetas)
-.progress {
-  display: flex;
-  flex-wrap: wrap;       // Permite que se pongan una junto a otra
-  justify-content: center;
-  gap: 20px;
-  padding: 30px 15px;
-
-  .hover-card {
-    flex: 1 1 250px;      // Tamaño ideal para que entren 2 o 4 por fila
-    max-width: 320px;
-    margin: 0;
-    --background: #111;
-    border: 1px solid rgba($color-arena, 0.2);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+  .pdf-btn {
+    --color: #fff;
+    --border-color: #fff;
+    --border-style: solid;
+    --border-width: 1px;
+    height: 35px;
+    font-weight: 800;
+    font-size: 0.7rem;
+    margin-right: 15px;
+    text-transform: uppercase;
 
     &:hover {
-      transform: translateY(-10px);
-      border-color: $color-arena;
-      box-shadow: 0 10px 20px rgba($color-arena, 0.1);
-    }
-
-    // Contenedor de imagen para que todas midan lo mismo
-    .img-wrapper {
-      width: 100%;
-      height: 180px;
-      overflow: hidden;
-      
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; // Ajusta la imagen sin deformarla
-        transition: transform 0.5s ease;
-      }
-    }
-
-    &:hover img {
-      transform: scale(1.1); // Efecto zoom suave al pasar el mouse
+      --background: #fff;
+      --color: #000;
     }
   }
 }
 
-// 3. SECCIÓN DE REGLAS (ESTILO GAMING)
-.featured {
-  padding: 20px;
-  max-width: 900px;
+// Respeto total a tus estilos de contenido de aquí en adelante...
+.main-container {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 60px 20px;
+  z-index: 10;
+  position: relative;
+}
+// (Sigue el resto de tu SCSS de cartas y plexus igual que lo tenías)
 
-  .section-title {
-    text-align: center;
-    color: $color-arena;
-    font-size: 2.2rem;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-    text-shadow: 0 0 10px rgba($color-arena, 0.4);
+// CONTENEDOR DE AVANCES
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  z-index: 10;
+  position: relative;
+}
+
+// TITULO ESTILO HERO
+.hero-mini {
+  text-align: center;
+  margin-bottom: 60px;
+  
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -1px;
+    .gold-text {
+      color: $color-arena;
+      text-shadow: 0 0 20px rgba($color-arena, 0.4);
+    }
+  }
+  .hero-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+}
+
+// GRILLA DE TARJETAS (ESTILO INICIO)
+.avances-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba($color-arena, 0.3);
   }
 
-  .neon-card {
-    --background: #0d0d0d;
-    border-left: 4px solid $color-arena; // Detalle elegante lateral
-    color: #fff;
-
-    h3 {
+  .img-wrapper {
+    position: relative;
+    height: 180px;
+    img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+    
+    .status-tag {
+      position: absolute;
+      top: 15px; right: 15px;
+      background: rgba(0,0,0,0.8);
       color: $color-arena;
-      margin-top: 25px;
-      border-bottom: 1px solid rgba($color-arena, 0.2);
-      padding-bottom: 5px;
-      display: inline-block;
-    }
-
-    p {
-      color: #ccc;
-      line-height: 1.6;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 5px;
-      
-      li {
-        margin: 10px 0;
-        color: #ddd;
-        &::before {
-          content: "▹"; // Flecha gamer
-          color: $color-arena;
-          margin-right: 10px;
-          font-weight: bold;
-        }
-      }
-    }
-
-    strong {
-      color: #fff;
-      background: rgba($color-arena, 0.2);
-      padding: 2px 6px;
+      padding: 4px 12px;
+      font-size: 0.6rem;
+      font-weight: 900;
+      border: 1px solid $color-arena;
       border-radius: 4px;
     }
   }
-}
 
-// 4. BOTONES "VER MÁS"
-.pulse-btn {
-  --background: #{$color-nariz};
-  --color: #fff;
-  margin-top: 15px;
-  font-weight: bold;
-  
-  &:hover {
-    --background: #{$color-ojo};
-    box-shadow: 0 0 15px rgba($color-ojo, 0.5);
+  .card-body {
+    padding: 25px;
+
+    .category-label {
+      color: $color-arena;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    h3 {
+      color: #fff;
+      font-weight: 800;
+      margin: 10px 0;
+      font-size: 1.3rem;
+    }
+
+    p {
+      color: #888;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    ion-button {
+      --color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      --padding-start: 0;
+      &:hover { --color: #{$color-arena}; }
+    }
   }
 }
 
-// Animación de entrada para la sección de reglas
-.fade-in {
-  animation: fadeInEffect 1.5s ease-in;
+// BRILLO ESPECIAL PARA LA CARTA ACTIVA
+.active-neon {
+  border-color: rgba($color-arena, 0.5);
+  box-shadow: 0 0 30px rgba($color-arena, 0.1);
 }
 
-@keyframes fadeInEffect {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+// FONDO PLEXUS (EL MISMO DEL INICIO)
+.plexus-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  .grid-overlay {
+    position: absolute;
+    width: 200%; height: 200%;
+    top: -50%; left: -50%;
+    background-image: linear-gradient(rgba($color-arena, 0.03) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba($color-arena, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    transform: perspective(1000px) rotateX(60deg);
+  }
+}
+
+@media (max-width: 992px) {
+  .avances-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 2.5rem !important; }
 }

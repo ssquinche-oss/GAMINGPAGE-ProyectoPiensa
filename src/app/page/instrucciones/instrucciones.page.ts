@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { RouterLink, RouterModule } from '@angular/router';
 
+
 @Component({
-  selector: 'app-inicio',
+  selector: 'app-instrucciones',
   standalone: true,
   imports: [CommonModule, IonicModule, RouterModule, RouterLink],
-  templateUrl: './inicio.page.html',
-  styleUrls: ['./inicio.page.scss'],
+  templateUrl: './instrucciones.page.html',
+  styleUrls: ['./instrucciones.page.scss'],
 })
-export class InicioPage {
+export class InstruccionesPage {
   constructor() {}
 }
+

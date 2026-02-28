@@ -8,10 +8,10 @@ import { RouterLink } from '@angular/router';
   selector: 'app-instrucciones',
   standalone: true,
   imports: [CommonModule, IonicModule, RouterLink],
-  templateUrl: './instrucciones.reglas.page.html',
-  styleUrls: ['./instrucciones.reglas.page.scss'],
+  templateUrl: './instruccionesreglas.page.html',
+  styleUrls: ['./instruccionesreglas.page.scss'],
 })
-export class InstruccionesPage {
+export class InstruccionesReglasPage {
 
 
   constructor() {}
@@ -19,14 +19,7 @@ export class InstruccionesPage {
 
   abrirPDF() {
     const url = 'assets/pdf/Juego.pdf';
-    const nuevaVentana = window.open(url, '_blank');
-
-
-    if (nuevaVentana) {
-      nuevaVentana.onload = () => {
-        nuevaVentana.print();
-      };
-    }
+    window.open(url, '_blank');
   }
 
 

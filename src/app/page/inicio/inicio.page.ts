@@ -16,13 +16,7 @@ export class InicioPage {
 
   abrirPDF() {
     const url = 'assets/pdf/Juego.pdf';
-    const nuevaVentana = window.open(url, '_blank');
-
-    if (nuevaVentana) {
-      nuevaVentana.onload = () => {
-        nuevaVentana.print();
-      };
-    }
+    window.open(url, '_blank');
   }
 
 }

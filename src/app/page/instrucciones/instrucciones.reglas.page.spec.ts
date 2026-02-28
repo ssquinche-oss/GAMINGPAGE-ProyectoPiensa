@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { InstruccionesPage } from './instrucciones.page';
+import { InstruccionesPage } from './instrucciones.reglas.page';
 
 
 describe('InstruccionesPage', () => {

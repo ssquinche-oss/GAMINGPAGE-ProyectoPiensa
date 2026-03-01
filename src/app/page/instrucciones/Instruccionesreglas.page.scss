@@ -59,20 +59,20 @@ ion-content {
 .design-section {
   padding: 10px 0;
   width: 100%;
-  max-width: 100PX;
-  margin: 0;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .design-card.reglas-card {
   width: 100%;
-  max-width: 75vw;                // casi full screen, margen total ~40-50px
+  max-width: 60vw;                // casi full screen, margen total ~40-50px
   margin: 0 auto;
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 3px solid rgba($color-arena, 0.4);
-  border-top: 10px solid $color-arena !important;
-  border-radius: 28px;
+  border-top: 5px solid $color-arena !important;
+  border-radius: 40px;
   box-shadow: 
     0 15px 50px rgba(0, 0, 0, 0.7),
     inset 0 0 35px rgba($color-arena, 0.12),

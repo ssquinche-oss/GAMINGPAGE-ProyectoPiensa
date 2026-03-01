@@ -134,6 +134,7 @@ $neon-pink: #ff2d55;
   font-size: 2rem;
   margin: 5px 0 30px;
   font-weight: 800;
+  text-shadow: 0 0 15px rgba($color-arena, 0.45);
 }
 
 .cards-grid {
@@ -157,12 +158,12 @@ $neon-pink: #ff2d55;
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 20px;
+    border-radius: 2px;
     padding: 1px;
     background: linear-gradient(
-      120deg,
+      12deg,
       transparent,
-      rgba($color-arena, 0.7),
+      rgba($color-arena, 0.1),
       transparent
     )
   }

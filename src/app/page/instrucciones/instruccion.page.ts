@@ -8,10 +8,10 @@ import { RouterLink } from '@angular/router';
   selector: 'app-instrucciones',
   standalone: true,
   imports: [CommonModule, IonicModule, RouterLink],
-  templateUrl: './instruccionesreglas.page.html',
-  styleUrls: ['./instruccionesreglas.page.scss'],
+  templateUrl: './instruccion.page.html',
+  styleUrls: ['./instruccion.page.scss'],
 })
-export class InstruccionesReglasPage {
+export class InstruccionPage {
 
   constructor() {}
 

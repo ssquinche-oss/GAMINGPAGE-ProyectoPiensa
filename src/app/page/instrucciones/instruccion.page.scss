@@ -4,41 +4,47 @@ $fondo-nav: #000000;
 $transition-epic: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 // NAVBAR - ESTILO EXACTO DEL INICIO (altura 80px, botones grises, dorado activo)
+
 .gaming-toolbar {
   --background: #000;
-  height: 80px;
+  --min-height: 80px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* Contenedor interno */
+.toolbar-content {
+  width: 100%;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  justify-content: space-between;
+}
 
-  ion-title {
-    font-weight: 900;
-    color: #fff;
-    letter-spacing: 2px;
-    font-size: 1.4rem;
-  }
 
-  .nav-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 20px;
+/* Centro */
+.center {
+  display: flex;
+  gap: 20px;
+}
 
-    ion-button {
-      --color: #888;
-      font-weight: 700;
 
-      &.active-link {
-        --color: #{$color-arena};
-      }
+.center ion-button {
+  --color: #888;
+  font-weight: 700;
+}
 
-      &:hover {
-        --color: #{$color-arena};
-      }
-    }
-  }
+
+.center ion-button.active-link {
+  --color: #{$color-arena};
+}
+
+
+/* Logo */
+.logo {
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 1.4rem;
 }
 
 // CONTENEDOR PRINCIPAL - MÁRGENES MÍNIMOS PARA QUE LA CARD SEA ANCHA
@@ -66,7 +72,7 @@ ion-content {
 .design-card.reglas-card {
   width: 100%;
   max-width: 60vw;                // casi full screen, margen total ~40-50px
-  margin: 0 auto;
+  margin: 100px auto;
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);

@@ -1,0 +1,34 @@
+.gaming-toolbar {
+  --background: #000;
+  height: 80px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+}
+
+/* Título */
+ion-title {
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+}
+
+/* CENTRADO REAL EN X Y Y */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;                     // 👈 agrega esto
+  transform: translate(-50%, -50%); // 👈 cambia esto
+  display: flex;
+  gap: 20px;
+}
+
+/* Botones */
+.nav-center ion-button {
+  --color: #888;
+  font-weight: 700;
+}
+
+ion-button.active-link {
+  --color: #dcb975;
+}

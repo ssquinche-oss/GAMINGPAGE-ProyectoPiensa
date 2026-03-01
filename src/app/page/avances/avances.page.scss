@@ -4,67 +4,45 @@ $fondo-negro: #050505;
 // NAVBAR UNIFICADA
 .gaming-toolbar {
   --background: #000;
-  --border-style: none;
   height: 80px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  
+}
 
-  .brand-logo {
+.toolbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .center {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .center ion-button {
+    --color: #888;
+    font-weight: 700;
+  }
+  
+  .center ion-button.active-link {
+    --color: #{$color-arena};
+  }
+  
+  .logo {
     font-weight: 900;
     color: #fff;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-  }
-
-  .nav-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 20px;
-
-    ion-button {
-      --color: #888;
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-
-      // Clase para resaltar la página actual
-      &.active-link { 
-        --color: #{$color-arena}; 
-        border-bottom: 2px solid $color-arena;
-      }
-      
-      &:hover { --color: #fff; }
-    }
-  }
-
-  .pdf-btn {
-    --color: #fff;
-    --border-color: #fff;
-    --border-style: solid;
-    --border-width: 1px;
-    height: 35px;
-    font-weight: 800;
-    font-size: 0.7rem;
-    margin-right: 15px;
-    text-transform: uppercase;
-
-    &:hover {
-      --background: #fff;
-      --color: #000;
-    }
-  }
+    font-size: 1.4rem;
 }
 
 // Respeto total a tus estilos de contenido de aquí en adelante...
 .main-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 500px auto;
   padding: 60px 20px;
   z-index: 10;
   position: relative;
@@ -74,7 +52,7 @@ $fondo-negro: #050505;
 // CONTENEDOR DE AVANCES
 .main-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 100px auto;
   padding: 60px 20px;
   z-index: 10;
   position: relative;

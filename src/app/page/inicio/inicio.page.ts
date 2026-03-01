@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterLink],
+  imports: [CommonModule, IonicModule],
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })

@@ -9,43 +9,32 @@ $neon-pink: #ff2d55;
 .gaming-toolbar {
   --background: #000;
   height: 80px;
-  display: flex;
-  align-items: center;
   border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+}
 
-  ion-title {
-    font-weight: 900;
-    color: #fff;
-    letter-spacing: 2px;
-    font-size: 1.4rem;
-  }
+ion-title {
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+}
 
-  .nav-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 20px;
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
 
-    ion-button {
-      --color: #888;
-      font-weight: 700;
+.nav-center ion-button {
+  --color: #888;
+  font-weight: 700;
+}
 
-      &.active-link {
-        --color: #{$color-arena};
-      }
-    }
-  }
-
-  .login-trigger-btn {
-    --border-color: #{$color-arena};
-    --border-style: solid;
-    --border-width: 1px;
-    height: 38px;
-    font-weight: 800;
-    color: #fff;
-  }
+ion-button.active-link {
+  --color: #dcb975;
 }
 
 /* =========================
@@ -53,7 +42,7 @@ $neon-pink: #ff2d55;
 ========================= */
 .main-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 0px 10px; /* menos margen */
   position: relative;
   z-index: 10;

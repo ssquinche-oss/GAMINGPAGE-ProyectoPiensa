@@ -9,28 +9,40 @@ $fondo-negro: #050505;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-  ion-title { font-weight: 900; color: #fff; letter-spacing: 2px; text-transform: uppercase; }
+}
 
-  .nav-center {
-    position: absolute; left: 50%; top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex; gap: 25px;
-    ion-button { --color: #888; font-weight: 700; font-size: 0.8rem;
-      &.active-link { --color: #{$color-arena}; }
-      &:hover { --color: #fff; }
-    }
+.toolbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
-
-  .login-trigger-btn {
-    --color: #fff; --border-color: #{$color-arena}; --border-style: solid; --border-width: 1px;
-    height: 38px; font-weight: 800; font-size: 0.75rem; margin-right: 15px;
+  
+  .center {
+    display: flex;
+    gap: 20px;
   }
+  
+  .center ion-button {
+    --color: #888;
+    font-weight: 700;
+  }
+  
+  .center ion-button.active-link {
+    --color: #{$color-arena};
+  }
+  
+  .logo {
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
 }
 
 // CONTENEDOR
 .main-container {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 60px 20px;
   z-index: 10;
   position: relative;

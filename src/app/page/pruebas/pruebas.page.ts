@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-pruebas',
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterLink],
+  imports: [CommonModule, IonicModule],
   templateUrl: './pruebas.page.html',
   styleUrls: ['./pruebas.page.scss'],
 })

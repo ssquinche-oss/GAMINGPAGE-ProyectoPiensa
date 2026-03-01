@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-estilo',
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterLink],
+  imports: [CommonModule, IonicModule],
   templateUrl: './estilo.page.html',
   styleUrls: ['./estilo.page.scss'],
 })

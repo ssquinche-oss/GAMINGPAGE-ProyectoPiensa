@@ -3,49 +3,44 @@ $neon-purple: #bf5af2;
 $neon-cyan: #5ac8fa;
 $neon-pink: #ff2d55;
 
-/* =========================
-   NAVBAR - EXACTO AL INICIO
-========================= */
+/* NAVBAR */
 .gaming-toolbar {
   --background: #000;
   height: 80px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgba(255,255,255,0.1);
-
-  ion-title {
-    font-weight: 900;
-    color: #fff;
-    letter-spacing: 2px;
-    font-size: 1.4rem;
-  }
-
-  .nav-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 20px;
-
-    ion-button {
-      --color: #888;
-      font-weight: 700;
-
-      &.active-link {
-        --color: #{$color-arena};
-      }
-
-      &:hover {
-        --color: #{$color-arena};
-      }
-    }
-  }
 }
 
-/* =========================
-   BACKGROUND Y OVERLAY (como en inicio)
-========================= */
+.toolbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  gap: 20px;
+}
+
+.center ion-button {
+  --color: #888;
+  font-weight: 700;
+}
+
+.center ion-button.active-link {
+  --color: #dcb975;
+}
+
+.logo {
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+}
+
+/* BACKGROUND */
 .gaming-background {
   --background: #000;
   background: radial-gradient(circle at center, #111 0%, #000 100%);
@@ -61,26 +56,21 @@ $neon-pink: #ff2d55;
 .grid-overlay {
   position: absolute;
   inset: 0;
-  opacity: 0.05; /* ajusta si tienes patrón real */
+  opacity: 0.05;
 }
 
-/* =========================
-   MAIN CONTAINER
-========================= */
+/* MAIN */
 .main-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 20px;
   position: relative;
   z-index: 10;
 }
 
-/* =========================
-   HERO / HEADER SECTION (adaptado para pruebas)
-========================= */
+/* HERO */
 .hero-section {
   text-align: center;
-  min-height: auto;
   padding: 40px 0;
 }
 
@@ -88,7 +78,6 @@ $neon-pink: #ff2d55;
   font-size: 3.5rem;
   font-weight: 900;
   color: #fff;
-  line-height: 1.1;
   margin-bottom: 20px;
 }
 
@@ -99,9 +88,7 @@ $neon-pink: #ff2d55;
   margin: 0 auto 60px;
 }
 
-/* =========================
-   TARJETAS DE PRUEBAS (estilo glass como en inicio)
-========================= */
+/* SECTION TITLE */
 .section-label {
   color: #fff;
   font-size: 2.2rem;
@@ -110,6 +97,7 @@ $neon-pink: #ff2d55;
   text-align: center;
 }
 
+/* CARDS */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -125,83 +113,72 @@ $neon-pink: #ff2d55;
   border-radius: 20px;
   padding: 40px 30px;
   transition: 0.35s ease;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 20px;
-    padding: 1px;
-    background: linear-gradient(120deg, transparent, rgba($color-arena, 0.7), transparent);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-
-  &:hover {
-    transform: translateY(-10px) scale(1.03);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 18px rgba($color-arena, 0.35), 0 0 45px rgba($color-arena, 0.2);
-  }
-
-  .icon-box {
-    width: 60px;
-    height: 60px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    transition: 0.3s;
-  }
-
-  .purple { background: rgba($neon-purple, 0.2); color: $neon-purple; }
-  .cyan { background: rgba($neon-cyan, 0.2); color: $neon-cyan; }
-  .pink { background: rgba($neon-pink, 0.2); color: $neon-pink; }
-
-  &:hover .icon-box {
-    box-shadow: 0 0 25px rgba($neon-purple, 0.6); /* ajusta por color si quieres */
-  }
-
-  h3 {
-    color: #fff;
-    font-weight: 800;
-    margin-bottom: 15px;
-  }
-
-  p {
-    color: #aaa;
-    line-height: 1.6;
-    font-size: 1rem;
-  }
-
-  .status {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: rgba($color-arena, 0.2);
-    color: $color-arena;
-    font-size: 0.85rem;
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid $color-arena;
-    text-transform: uppercase;
-  }
 }
 
-/* =========================
-   ANIMACIONES (como en inicio)
-========================= */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+.glass-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 18px rgba(220, 185, 117, 0.35),
+              0 0 45px rgba(220, 185, 117, 0.2);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.purple {
+  background: rgba(191, 90, 242, 0.2);
+  color: #bf5af2;
+}
+
+.cyan {
+  background: rgba(90, 200, 250, 0.2);
+  color: #5ac8fa;
+}
+
+.pink {
+  background: rgba(255, 45, 85, 0.2);
+  color: #ff2d55;
+}
+
+.glass-card:hover .icon-box {
+  box-shadow: 0 0 25px rgba(191, 90, 242, 0.6);
+}
+
+.glass-card h3 {
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.glass-card p {
+  color: #aaa;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.status {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(220, 185, 117, 0.2);
+  color: #dcb975;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #dcb975;
+  text-transform: uppercase;
+}
+
+/* RESPONSIVE */
 @media (max-width: 992px) {
   .cards-grid {
     grid-template-columns: 1fr;

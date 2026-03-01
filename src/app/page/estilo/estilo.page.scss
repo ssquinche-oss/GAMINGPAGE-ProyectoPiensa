@@ -129,7 +129,6 @@ ion-content {
     border-radius: 20px;
     padding: 1px;
     background: linear-gradient(120deg, transparent, rgba($color-arena, 0.7), transparent);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;

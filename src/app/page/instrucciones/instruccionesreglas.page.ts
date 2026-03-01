@@ -13,9 +13,7 @@ import { RouterLink } from '@angular/router';
 })
 export class InstruccionesReglasPage {
 
-
   constructor() {}
-
 
   abrirPDF() {
     const url = 'assets/pdf/Juego.pdf';
